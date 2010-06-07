@@ -29,11 +29,7 @@
 #include "talk/base/common.h"
 #include "talk/xmpp/xmppstanzaparser.h"
 #include "talk/xmpp/constants.h"
-#ifdef EXPAT_RELATIVE_PATH
-#include "lib/expat.h"
-#else
-#include "third_party/expat/v2_0_1/Source/lib/expat.h"
-#endif
+#include <expat.h>
 
 namespace buzz {
 

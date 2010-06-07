@@ -35,11 +35,7 @@
 #include "talk/xmllite/xmlnsstack.h"
 #include "talk/xmllite/xmlconstants.h"
 #include "talk/xmllite/xmlnsstack.h"
-#ifdef EXPAT_RELATIVE_PATH
-#include "lib/expat.h"
-#else
-#include "third_party/expat/v2_0_1/Source/lib/expat.h"
-#endif  // EXPAT_RELATIVE_PATH
+#include <expat.h>
 
 namespace buzz {
 

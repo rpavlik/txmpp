@@ -32,12 +32,7 @@
 #include <vector>
 #include "talk/base/scoped_ptr.h"
 #include "talk/xmllite/xmlparser.h"
-
-#ifdef EXPAT_RELATIVE_PATH
-#include "lib/expat.h"
-#else
-#include "third_party/expat/v2_0_1/Source/lib/expat.h"
-#endif  // EXPAT_RELATIVE_PATH
+#include <expat.h>
 
 namespace buzz {
 

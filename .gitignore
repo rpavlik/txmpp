@@ -1,0 +1,4 @@
+*.dylib
+*.os
+*.so
+.sconsign.dblite

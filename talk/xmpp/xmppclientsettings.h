@@ -28,8 +28,8 @@
 #ifndef _XMPPCLIENTSETTINGS_H_
 #define _XMPPCLIENTSETTINGS_H_
 
-#include "talk/p2p/base/port.h"
 #include "talk/base/cryptstring.h"
+#include "talk/base/proxyinfo.h"
 
 namespace buzz {
 
@@ -74,8 +74,7 @@ class XmppUserSettings {
 class XmppClientSettings : public XmppUserSettings {
  public:
   XmppClientSettings()
-    : protocol_(cricket::PROTO_TCP),
-      proxy_(talk_base::PROXY_NONE),
+    : proxy_(talk_base::PROXY_NONE),
       proxy_port_(80),
       use_proxy_auth_(false) {
   }
@@ -83,7 +82,6 @@ class XmppClientSettings : public XmppUserSettings {
   void set_server(const talk_base::SocketAddress & server) { 
       server_ = server; 
   }
-  void set_protocol(cricket::ProtocolType protocol) { protocol_ = protocol; }
   void set_proxy(talk_base::ProxyType f) { proxy_ = f; }
   void set_proxy_host(const std::string & host) { proxy_host_ = host; }
   void set_proxy_port(int port) { proxy_port_ = port; };
@@ -92,7 +90,6 @@ class XmppClientSettings : public XmppUserSettings {
   void set_proxy_pass(const talk_base::CryptString & pass) { proxy_pass_ = pass; }
 
   const talk_base::SocketAddress & server() const { return server_; }
-  cricket::ProtocolType protocol() const { return protocol_; }
   talk_base::ProxyType proxy() const { return proxy_; }
   const std::string & proxy_host() const { return proxy_host_; }
   int proxy_port() const { return proxy_port_; }
@@ -102,7 +99,6 @@ class XmppClientSettings : public XmppUserSettings {
 
  private:
   talk_base::SocketAddress server_;
-  cricket::ProtocolType protocol_;
   talk_base::ProxyType proxy_;
   std::string proxy_host_;
   int proxy_port_;
