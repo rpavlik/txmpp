@@ -93,7 +93,17 @@ mac_frameworks = [
     'SystemConfiguration',
 ]
 
-if system == 'darwin':
+if system == 'linux':
+    env = Environment(
+        CXXFLAGS=flags,
+    )
+    env.SharedLibrary(
+        name,
+        src+posix_src,
+        CPPDEFINES=defines+['LINUX'],
+        LIBS=libraries,
+    )
+elif system == 'darwin':
     env = Environment(
         CXXFLAGS=flags,
         FRAMEWORKS=mac_frameworks,
