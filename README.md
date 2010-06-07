@@ -1,5 +1,5 @@
-libtalk
-=======
+talk
+====
 
 Various bits of XMPP code taken from [libjingle][libjingle].
 
