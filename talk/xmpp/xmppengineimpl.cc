@@ -37,6 +37,7 @@
 #include "talk/xmpp/constants.h"
 #include "talk/xmllite/xmlprinter.h"
 #include "talk/xmpp/saslhandler.h"
+#include "talk/base/logging.h"
 
 namespace buzz {
 
@@ -255,6 +256,10 @@ XmppEngineImpl::SendStanza(const XmlElement * element) {
   if (state_ == STATE_CLOSED)
     return XMPP_RETURN_BADSTATE;
 
+#ifdef _DEBUG
+  LOG(LS_SENSITIVE) << "SEND: " << element->Str();
+#endif
+
   EnterExit ee(this);
 
   if (login_task_.get()) {
@@ -272,6 +277,10 @@ XmppReturnStatus
 XmppEngineImpl::SendRaw(const std::string & text) {
   if (state_ == STATE_CLOSED || login_task_.get())
     return XMPP_RETURN_BADSTATE;
+
+#ifdef _DEBUG
+  LOG(LS_SENSITIVE) << "SEND: " << text;
+#endif
 
   EnterExit ee(this);
 
@@ -321,6 +330,10 @@ void
 XmppEngineImpl::IncomingStanza(const XmlElement * stanza) {
   if (HasError() || raised_reset_)
     return;
+
+#ifdef _DEBUG
+  LOG(LS_SENSITIVE) << "RECV: " << stanza->Str();
+#endif
 
   if (stanza->Name() == QN_STREAM_ERROR) {
     // Explicit XMPP stream error
@@ -387,6 +400,13 @@ XmppEngineImpl::InternalSendStart(const std::string & to) {
            << "version=\"1.0\" "
            << "xmlns:stream=\"http://etherx.jabber.org/streams\" "
            << "xmlns=\"jabber:client\">\r\n";
+#ifdef _DEBUG
+  LOG(LS_SENSITIVE) << "<stream:stream to=\"" << hostname << "\" "
+                    << "xml:lang=\"" << lang << "\" "
+                    << "version=\"1.0\" "
+                    << "xmlns:stream=\"http://etherx.jabber.org/streams\" "
+                    << "xmlns=\"jabber:client\">";
+#endif
 }
 
 void
