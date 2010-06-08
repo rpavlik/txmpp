@@ -4,7 +4,7 @@
 #include <talk/xmpp/xmppclientsettings.h>
 #include "xmppthread.h"
 
-int main(int argc, char **argv) {
+int main(int argc, char* argv[]) {
 
   talk_base::LogMessage::LogToDebug(talk_base::LS_SENSITIVE);
 
