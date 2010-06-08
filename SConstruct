@@ -93,24 +93,53 @@ mac_frameworks = [
     'SystemConfiguration',
 ]
 
+AddOption(
+    '--prefix',
+    dest='prefix',
+    type='string',
+    nargs=1,
+    action='store',
+    default='',
+    metavar='DIR',
+    help='installation prefix',
+)
+
+AddOption(
+    '--with-examples',
+    dest='examples',
+    action='store_true',
+)
+
+AddOption(
+    '--with-debug',
+    dest='debug',
+    action='store_true',
+)
+
+if GetOption('debug'):
+    flags += ' -g'
+    defines += ['_DEBUG']
+
+env = Environment(
+    CXXFLAGS=flags,
+    FRAMEWORKS=mac_frameworks,
+)
+
 if system == 'linux':
-    env = Environment(
-        CXXFLAGS=flags,
-    )
-    env.SharedLibrary(
-        name,
-        src+posix_src,
-        CPPDEFINES=defines+['LINUX'],
-        LIBS=libraries,
-    )
+    src += posix_src
+    defines += ['LINUX']
 elif system == 'darwin':
-    env = Environment(
-        CXXFLAGS=flags,
-        FRAMEWORKS=mac_frameworks,
-    )
-    env.SharedLibrary(
-        name,
-        src+posix_src+mac_src,
-        CPPDEFINES=defines+['OSX'],
-        LIBS=libraries,
-    )
+    src += posix_src + mac_src
+    defines += ['OSX']
+
+libtalk = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
+
+if GetOption('examples'):
+    hello_src = [
+        'examples/hello/main.cc',
+        'examples/hello/xmppauth.cc',
+        'examples/hello/xmpppump.cc',
+        'examples/hello/xmppsocket.cc',
+        'examples/hello/xmppthread.cc',
+    ]
+    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtalk)

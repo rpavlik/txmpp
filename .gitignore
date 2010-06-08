@@ -1,4 +1,6 @@
 *.dylib
+*.o
 *.os
 *.so
 .sconsign.dblite
+hello-example
