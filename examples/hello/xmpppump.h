@@ -1,13 +1,13 @@
 #ifndef _XMPPPUMP_H_
 #define _XMPPPUMP_H_
 
-#include "talk/base/messagequeue.h"
-#include "talk/base/taskrunner.h"
-#include "talk/base/thread.h"
-#include "talk/base/time.h"
-#include "talk/xmpp/xmppclient.h"
-#include "talk/xmpp/xmppengine.h"
-#include "talk/xmpp/xmpptask.h"
+#include <talk/base/messagequeue.h>
+#include <talk/base/taskrunner.h>
+#include <talk/base/thread.h>
+#include <talk/base/time.h>
+#include <talk/xmpp/xmppclient.h>
+#include <talk/xmpp/xmppengine.h>
+#include <talk/xmpp/xmpptask.h>
 
 // Simple xmpp pump
 

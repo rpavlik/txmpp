@@ -1,11 +1,10 @@
 #ifndef _XMPPTHREAD_H_
 #define _XMPPTHREAD_H_
 
-#include "talk/xmpp/xmppclientsettings.h"
-#include "talk/base/thread.h"
+#include <talk/base/thread.h>
+#include <talk/xmpp/xmppclientsettings.h>
 #include "xmpppump.h"
 #include "xmppsocket.h"
-#include <iostream>
 
 class XmppThread:
     public talk_base::Thread, XmppPumpNotify, talk_base::MessageHandler {

@@ -1,22 +1,21 @@
+#include "xmppsocket.h"
+
 #ifdef HAVE_CONFIG_H
 #include <config.h>
 #endif
-
 #include <errno.h>
-#include "talk/base/basicdefs.h"
-#include "talk/base/logging.h"
-#include "talk/base/thread.h"
+#include <talk/base/basicdefs.h>
+#include <talk/base/logging.h>
 #ifdef FEATURE_ENABLE_SSL
-#include "talk/base/ssladapter.h"
+#include <talk/base/ssladapter.h>
 #endif
-#include "xmppsocket.h"
-
 #ifdef USE_SSLSTREAM
-#include "talk/base/socketstream.h"
+#include <talk/base/socketstream.h>
 #ifdef FEATURE_ENABLE_SSL
-#include "talk/base/sslstreamadapter.h"
+#include <talk/base/sslstreamadapter.h>
 #endif  // FEATURE_ENABLE_SSL
 #endif  // USE_SSLSTREAM
+#include <talk/base/thread.h>
 
 XmppSocket::XmppSocket(bool tls) : tls_(tls) {
   talk_base::Thread* pth = talk_base::Thread::Current();
@@ -39,8 +38,10 @@ XmppSocket::XmppSocket(bool tls) : tls_(tls) {
   cricket_socket_ = socket;
   stream_ = new talk_base::SocketStream(cricket_socket_);
 #ifdef FEATURE_ENABLE_SSL
-  if (tls_)
+  if (tls_) {
     stream_ = talk_base::SSLStreamAdapter::Create(stream_);
+    talk_base::InitializeSSL();
+  }
 #endif  // FEATURE_ENABLE_SSL
   stream_->SignalEvent.connect(this, &XmppSocket::OnEvent);
 #endif  // USE_SSLSTREAM

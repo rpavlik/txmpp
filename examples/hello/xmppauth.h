@@ -2,12 +2,11 @@
 #define _XMPPAUTH_H_
 
 #include <vector>
-
-#include "talk/base/cryptstring.h"
-#include "talk/base/sigslot.h"
-#include "talk/xmpp/jid.h"
-#include "talk/xmpp/saslhandler.h"
-#include "talk/xmpp/prexmppauth.h"
+#include <talk/base/cryptstring.h>
+#include <talk/base/sigslot.h>
+#include <talk/xmpp/jid.h>
+#include <talk/xmpp/saslhandler.h>
+#include <talk/xmpp/prexmppauth.h>
 
 class XmppAuth: public buzz::PreXmppAuth {
 public:

@@ -1,6 +1,6 @@
-#include <iostream>
-#include "talk/xmpp/xmppclientsettings.h"
 #include "xmppthread.h"
+
+#include <talk/xmpp/xmppclientsettings.h>
 #include "xmppauth.h"
 
 namespace {

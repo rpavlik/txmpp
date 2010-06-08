@@ -2,6 +2,7 @@ import platform
 
 defines = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H=1', 'POSIX']
 flags = '-I.'
+frameworks = []
 libraries = ['crypto', 'expat', 'pthread', 'ssl'],
 name = 'txmpp'
 system = platform.system().lower()
@@ -86,13 +87,6 @@ posix_src = [
     "talk/base/unixfilesystem.cc",
 ]
 
-mac_frameworks = [
-    'CoreServices',
-    'Carbon',
-    'Security',
-    'SystemConfiguration',
-]
-
 AddOption(
     '--prefix',
     dest='prefix',
@@ -120,17 +114,23 @@ if GetOption('debug'):
     flags += ' -g'
     defines += ['_DEBUG']
 
+if system == 'linux':
+    defines += ['LINUX']
+    src += posix_src
+elif system == 'darwin':
+    defines += ['OSX']
+    frameworks += [
+        'CoreServices',
+        'Carbon',
+        'Security',
+        'SystemConfiguration',
+    ]
+    src += posix_src + mac_src
+
 env = Environment(
     CXXFLAGS=flags,
-    FRAMEWORKS=mac_frameworks,
+    FRAMEWORKS=frameworks,
 )
-
-if system == 'linux':
-    src += posix_src
-    defines += ['LINUX']
-elif system == 'darwin':
-    src += posix_src + mac_src
-    defines += ['OSX']
 
 libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 
@@ -142,4 +142,4 @@ if GetOption('examples'):
         'examples/hello/xmppsocket.cc',
         'examples/hello/xmppthread.cc',
     ]
-    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtxmpp)
+    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines+['USE_SSLSTREAM'], LIBS=libtxmpp)

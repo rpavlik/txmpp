@@ -1,9 +1,8 @@
 #include "xmppauth.h"
 
 #include <algorithm>
-
-#include "talk/xmpp/saslcookiemechanism.h"
-#include "talk/xmpp/saslplainmechanism.h"
+#include <talk/xmpp/saslcookiemechanism.h>
+#include <talk/xmpp/saslplainmechanism.h>
 
 XmppAuth::XmppAuth() : done_(false) {
 }

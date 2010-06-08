@@ -1,5 +1,6 @@
-#include "talk/base/logging.h"
 #include "xmpppump.h"
+
+#include <talk/base/logging.h>
 #include "xmppauth.h"
 
 XmppPump::XmppPump(XmppPumpNotify * notify) {

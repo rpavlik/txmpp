@@ -1,10 +1,10 @@
 #ifndef _XMPPSOCKET_H_
 #define _XMPPSOCKET_H_
 
-#include "talk/base/asyncsocket.h"
-#include "talk/base/bytebuffer.h"
-#include "talk/base/sigslot.h"
-#include "talk/xmpp/asyncsocket.h"
+#include <talk/base/asyncsocket.h>
+#include <talk/base/bytebuffer.h>
+#include <talk/base/sigslot.h>
+#include <talk/xmpp/asyncsocket.h>
 
 // The below define selects the SSLStreamAdapter implementation for
 // SSL, as opposed to the SSLAdapter socket adapter.

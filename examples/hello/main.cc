@@ -1,10 +1,7 @@
-#include <cstdio>
 #include <iostream>
-
-#include "talk/xmpp/xmppclientsettings.h"
-#include "talk/base/cryptstring.h"
-#include "talk/base/logging.h"
-
+#include <talk/base/cryptstring.h>
+#include <talk/base/logging.h>
+#include <talk/xmpp/xmppclientsettings.h>
 #include "xmppthread.h"
 
 int main(int argc, char **argv) {
