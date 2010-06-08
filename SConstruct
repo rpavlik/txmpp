@@ -3,7 +3,7 @@ import platform
 defines = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H=1', 'POSIX']
 flags = '-I.'
 libraries = ['crypto', 'expat', 'pthread', 'ssl'],
-name = 'talk'
+name = 'txmpp'
 system = platform.system().lower()
 
 src = [
@@ -132,7 +132,7 @@ elif system == 'darwin':
     src += posix_src + mac_src
     defines += ['OSX']
 
-libtalk = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
+libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 
 if GetOption('examples'):
     hello_src = [
@@ -142,4 +142,4 @@ if GetOption('examples'):
         'examples/hello/xmppsocket.cc',
         'examples/hello/xmppthread.cc',
     ]
-    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtalk)
+    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtxmpp)
