@@ -2,5 +2,6 @@
 *.o
 *.os
 *.so
+.*.swp
 .sconsign.dblite
 hello-example
