@@ -140,6 +140,7 @@ if GetOption('examples'):
         'examples/hello/xmppauth.cc',
         'examples/hello/xmpppump.cc',
         'examples/hello/xmppsocket.cc',
+        'examples/hello/xmpptasks.cc',
         'examples/hello/xmppthread.cc',
     ]
     hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines+['USE_SSLSTREAM'], LIBS=libtxmpp)

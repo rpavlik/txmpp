@@ -2,6 +2,7 @@
 
 #include <talk/base/logging.h>
 #include "xmppauth.h"
+#include "xmpptasks.h"
 
 XmppPump::XmppPump(XmppPumpNotify * notify) {
   state_ = buzz::XmppEngine::STATE_NONE;
@@ -19,6 +20,10 @@ void XmppPump::DoLogin(const buzz::XmppClientSettings & xcs,
       LOG(LS_ERROR) << "Failed to connect.";
     }
     client_->Start();
+
+    // Owned by client_
+    XmppTaskMessage *task_message = new XmppTaskMessage(client_);
+    task_message->Start();
   }
 }
 
@@ -31,6 +36,8 @@ void XmppPump::DoDisconnect() {
 void XmppPump::OnStateChange(buzz::XmppEngine::State state) {
   if (state_ == state)
     return;
+  if (state == buzz::XmppEngine::STATE_OPEN)
+    client_->SendRaw("<presence/>");
   state_ = state;
   if (notify_ != NULL)
     notify_->OnStateChange(state);
