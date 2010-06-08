@@ -28,6 +28,7 @@ XmppSocket::XmppSocket(bool tls) : tls_(tls) {
 #ifdef FEATURE_ENABLE_SSL
   if (tls_) {
     socket = talk_base::SSLAdapter::Create(socket);
+    talk_base::InitializeSSL();
   }
 #endif  // FEATURE_ENABLE_SSL
   cricket_socket_ = socket;
