@@ -524,8 +524,12 @@ void OpenSSLStreamAdapter::Cleanup() {
 SSL_CTX* OpenSSLStreamAdapter::SetupSSLContext() {
   SSL_CTX* ctx = SSL_CTX_new(role_ == SSL_CLIENT ? TLSv1_client_method()
                              : TLSv1_server_method());
-  if (ctx == NULL)
+  if (ctx == NULL) {
+#ifdef _DEBUG
+    ERR_print_errors_fp(stderr);
+#endif
     return NULL;
+  }
 
   if (identity_.get() && !identity_->ConfigureIdentity(ctx)) {
     SSL_CTX_free(ctx);
