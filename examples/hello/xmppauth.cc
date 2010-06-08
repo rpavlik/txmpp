@@ -1,6 +1,5 @@
 #include "xmppauth.h"
 
-#include <iostream>
 #include <algorithm>
 
 #include "talk/xmpp/saslcookiemechanism.h"
@@ -26,10 +25,6 @@ void XmppAuth::StartPreXmppAuth(const buzz::Jid & jid,
   
 std::string XmppAuth::ChooseBestSaslMechanism(const std::vector<std::string> & mechanisms, bool encrypted) {
   std::vector<std::string>::const_iterator it;
-
-  std::cout << "================================================================================" << std::endl;
-  std::cout << "XmppAuth::ChooseBestSaslMechanism" << std::endl;
-  std::cout << "================================================================================" << std::endl;
 
   it = std::find(mechanisms.begin(), mechanisms.end(), "PLAIN");
   if (it != mechanisms.end()) {
