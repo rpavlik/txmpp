@@ -653,7 +653,11 @@ bool OpenSSLAdapter::VerifyServerName(SSL* ssl, const char* host,
     int extension_nid = OBJ_obj2nid(X509_EXTENSION_get_object(extension));
 
     if (extension_nid == NID_subject_alt_name) {
+#if OPENSSL_VERSION_NUMBER >= 0x10000000
       const X509V3_EXT_METHOD* meth = X509V3_EXT_get(extension);
+#else
+      X509V3_EXT_METHOD* meth = X509V3_EXT_get(extension);
+#endif
       if (!meth)
         break;
 
@@ -837,8 +841,12 @@ bool OpenSSLAdapter::ConfigureTrustedRootCertificates(SSL_CTX* ctx) {
 SSL_CTX*
 OpenSSLAdapter::SetupSSLContext() {
   SSL_CTX* ctx = SSL_CTX_new(TLSv1_client_method());
-  if (ctx == NULL)
+  if (ctx == NULL) {
+#ifdef _DEBUG
+    ERR_print_errors_fp(stderr);
+#endif
     return NULL;
+  }
 
   if (!ConfigureTrustedRootCertificates(ctx)) {
     SSL_CTX_free(ctx);
