@@ -21,6 +21,7 @@ int main(int argc, char* argv[]) {
   xcs.set_user("test");
   xcs.set_pass(password);
   xcs.set_host("example.org");
+  xcs.set_resource("resource");
   xcs.set_use_tls(true);
   xcs.set_server(talk_base::SocketAddress("example.org", 5222));
 
