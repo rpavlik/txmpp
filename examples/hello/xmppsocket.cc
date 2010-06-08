@@ -157,9 +157,6 @@ bool XmppSocket::Connect(const talk_base::SocketAddress& addr) {
 }
 
 bool XmppSocket::Read(char * data, size_t len, size_t* len_read) {
-#ifdef _DEBUG
-  LOG(LS_SENSITIVE) << "RECV: " << data;
-#endif
 #ifndef USE_SSLSTREAM
   int read = cricket_socket_->Recv(data, len);
   if (read > 0) {
@@ -175,9 +172,6 @@ bool XmppSocket::Read(char * data, size_t len, size_t* len_read) {
 }
 
 bool XmppSocket::Write(const char * data, size_t len) {
-#ifdef _DEBUG
-  LOG(LS_SENSITIVE) <<  "SEND: " << data;
-#endif
   buffer_.WriteBytes(data, len);
 #ifndef USE_SSLSTREAM
   OnWriteEvent(cricket_socket_);
