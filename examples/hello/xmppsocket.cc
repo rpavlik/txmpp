@@ -2,8 +2,6 @@
 #include <config.h>
 #endif
 
-#include <iostream>
-
 #include <errno.h>
 #include "talk/base/basicdefs.h"
 #include "talk/base/logging.h"

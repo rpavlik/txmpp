@@ -1,4 +1,4 @@
-#include <iostream>
+#include "talk/base/logging.h"
 #include "xmpppump.h"
 #include "xmppauth.h"
 
@@ -15,7 +15,7 @@ void XmppPump::DoLogin(const buzz::XmppClientSettings & xcs,
   if (!AllChildrenDone()) {
     client_->SignalStateChange.connect(this, &XmppPump::OnStateChange);
     if (client_->Connect(xcs, "", socket, auth) != buzz::XMPP_RETURN_OK) {
-      std::cout << "Failed to connect." << std::endl;
+      LOG(LS_ERROR) << "Failed to connect.";
     }
     client_->Start();
   }
