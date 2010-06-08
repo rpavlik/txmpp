@@ -1,7 +1,8 @@
 *.dylib
+*.log
 *.o
 *.os
 *.so
 .*.swp
-.sconsign.dblite
+.scon*
 hello-example

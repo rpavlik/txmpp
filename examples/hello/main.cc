@@ -12,6 +12,8 @@ int main(int argc, char* argv[]) {
   ipass.password() = "test";
   talk_base::CryptString password = talk_base::CryptString(ipass);
 
+  start:
+
   // Start xmpp on a different thread
   XmppThread thread;
   thread.Start();
@@ -30,9 +32,15 @@ int main(int argc, char* argv[]) {
   // Use main thread for console input
   std::string line;
   while (std::getline(std::cin, line)) {
-    if (line == "quit")
+    if (line == "quit" || line == "continue")
       break;
   }
+
+  thread.Disconnect();
+  thread.Stop();
+
+  if (line == "continue")
+    goto start;
 
   return 0;
 }

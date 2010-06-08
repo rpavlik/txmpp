@@ -1,9 +1,13 @@
 import platform
 
+def Abort(message):
+    print message
+    Exit(1)
+
 defines = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H=1', 'POSIX']
 flags = '-Isrc'
 frameworks = []
-libraries = ['crypto', 'expat', 'pthread', 'ssl'],
+libraries = ['crypto', 'expat', 'pthread', 'ssl']
 name = 'txmpp'
 system = platform.system().lower()
 
@@ -110,6 +114,12 @@ AddOption(
     action='store_true',
 )
 
+AddOption(
+    '--with-perftools',
+    dest='perftools',
+    action='store_true',
+)
+
 if GetOption('debug'):
     flags += ' -g'
     defines += ['_DEBUG']
@@ -131,6 +141,14 @@ env = Environment(
     CXXFLAGS=flags,
     FRAMEWORKS=frameworks,
 )
+
+conf = Configure(env)
+
+if GetOption('perftools'):
+    if conf.CheckCXXHeader('google/tcmalloc.h'):
+        libraries += ['tcmalloc']
+    else:
+        Abort('perftools not found')
 
 libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 

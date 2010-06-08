@@ -50,6 +50,7 @@ XmppSocket::XmppSocket(bool tls) : tls_(tls) {
 }
 
 XmppSocket::~XmppSocket() {
+  talk_base::CleanupSSL();
   Close();
 #ifndef USE_SSLSTREAM
   delete cricket_socket_;
