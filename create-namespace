@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+function modify-file {
+  sed -i.backup 's/buzz::AsyncSocket/buzz::XmppAsyncSocket/g' "$1"
+
+  sed -i.backup 's/talk_base::/txmpp::/g' "$1"
+  sed -i.backup 's/namespace talk_base/namespace txmpp/g' "$1"
+
+  sed -i.backup 's/buzz::/txmpp::/g' "$1"
+  sed -i.backup 's/namespace buzz/namespace txmpp/g' "$1"
+
+  sed -i.backup 's/sigslot::/txmpp::/g' "$1"
+  sed -i.backup 's/namespace sigslot/namespace txmpp/g' "$1"
+
+  sed -i.backup 's/include "talk/include "txmpp/g' "$1"
+}
+
+function create {
+  echo "Removing old txmpp files"
+  rm -fr src/txmpp/{base,xmllite,xmpp}
+
+  echo "Copying talk files to txmpp"
+  mkdir -p src/txmpp
+  cp -r src/talk/{base,xmllite,xmpp} src/txmpp
+
+  echo "Renaming AsyncSocket to avoid namespace conflicts"
+  sed -i.backup 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
+  sed -i.backup 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+  sed -i.backup 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+
+  echo "Converting namespace to txmpp"
+  for path in $( find src/txmpp -name '*.h' -or -name '*.cc' ); do
+    modify-file $path
+  done
+
+  echo "Cleaning up"
+  find . -name '*.backup' -delete
+
+  echo "Done"
+}
+
+if [[ "$1" == "understand" ]]; then
+  create
+else
+  echo "Read and understand the script before running."
+fi

@@ -9,86 +9,87 @@ flags = '-Isrc'
 frameworks = []
 libraries = ['crypto', 'expat', 'pthread', 'ssl']
 name = 'txmpp'
+src_path = 'src/txmpp/'
 system = platform.system().lower()
 
 src = [
-    "src/talk/base/asynchttprequest.cc",
-    "src/talk/base/asyncpacketsocket.cc",
-    "src/talk/base/asynctcpsocket.cc",
-    "src/talk/base/asyncudpsocket.cc",
-    "src/talk/base/autodetectproxy.cc",
-    "src/talk/base/base64.cc",
-    "src/talk/base/bytebuffer.cc",
-    "src/talk/base/checks.cc",
-    "src/talk/base/common.cc",
-    "src/talk/base/diskcache.cc",
-    "src/talk/base/event.cc",
-    "src/talk/base/fileutils.cc",
-    "src/talk/base/firewallsocketserver.cc",
-    "src/talk/base/flags.cc",
-    "src/talk/base/helpers.cc",
-    "src/talk/base/host.cc",
-    "src/talk/base/httpbase.cc",
-    "src/talk/base/httpclient.cc",
-    "src/talk/base/httpcommon.cc",
-    "src/talk/base/httprequest.cc",
-    "src/talk/base/logging.cc",
-    "src/talk/base/md5c.c",
-    "src/talk/base/messagehandler.cc",
-    "src/talk/base/messagequeue.cc",
-    "src/talk/base/nethelpers.cc",
-    "src/talk/base/network.cc",
-    "src/talk/base/openssladapter.cc",
-    "src/talk/base/opensslidentity.cc",
-    "src/talk/base/opensslstreamadapter.cc",
-    "src/talk/base/pathutils.cc",
-    "src/talk/base/physicalsocketserver.cc",
-    "src/talk/base/proxydetect.cc",
-    "src/talk/base/proxyinfo.cc",
-    "src/talk/base/signalthread.cc",
-    "src/talk/base/socketadapters.cc",
-    "src/talk/base/socketaddress.cc",
-    "src/talk/base/socketpool.cc",
-    "src/talk/base/ssladapter.cc",
-    "src/talk/base/sslidentity.cc",
-    "src/talk/base/sslsocketfactory.cc",
-    "src/talk/base/sslstreamadapter.cc",
-    "src/talk/base/stream.cc",
-    "src/talk/base/stringdigest.cc",
-    "src/talk/base/stringencode.cc",
-    "src/talk/base/stringutils.cc",
-    "src/talk/base/task.cc",
-    "src/talk/base/taskparent.cc",
-    "src/talk/base/taskrunner.cc",
-    "src/talk/base/thread.cc",
-    "src/talk/base/time.cc",
-    "src/talk/base/urlencode.cc",
-    "src/talk/xmllite/qname.cc",
-    "src/talk/xmllite/xmlbuilder.cc",
-    "src/talk/xmllite/xmlconstants.cc",
-    "src/talk/xmllite/xmlelement.cc",
-    "src/talk/xmllite/xmlnsstack.cc",
-    "src/talk/xmllite/xmlparser.cc",
-    "src/talk/xmllite/xmlprinter.cc",
-    "src/talk/xmpp/constants.cc",
-    "src/talk/xmpp/jid.cc",
-    "src/talk/xmpp/ratelimitmanager.cc",
-    "src/talk/xmpp/saslmechanism.cc",
-    "src/talk/xmpp/xmppclient.cc",
-    "src/talk/xmpp/xmppengineimpl.cc",
-    "src/talk/xmpp/xmppengineimpl_iq.cc",
-    "src/talk/xmpp/xmpplogintask.cc",
-    "src/talk/xmpp/xmppstanzaparser.cc",
-    "src/talk/xmpp/xmpptask.cc",
+    "base/asynchttprequest.cc",
+    "base/asyncpacketsocket.cc",
+    "base/asynctcpsocket.cc",
+    "base/asyncudpsocket.cc",
+    "base/autodetectproxy.cc",
+    "base/base64.cc",
+    "base/bytebuffer.cc",
+    "base/checks.cc",
+    "base/common.cc",
+    "base/diskcache.cc",
+    "base/event.cc",
+    "base/fileutils.cc",
+    "base/firewallsocketserver.cc",
+    "base/flags.cc",
+    "base/helpers.cc",
+    "base/host.cc",
+    "base/httpbase.cc",
+    "base/httpclient.cc",
+    "base/httpcommon.cc",
+    "base/httprequest.cc",
+    "base/logging.cc",
+    "base/md5c.c",
+    "base/messagehandler.cc",
+    "base/messagequeue.cc",
+    "base/nethelpers.cc",
+    "base/network.cc",
+    "base/openssladapter.cc",
+    "base/opensslidentity.cc",
+    "base/opensslstreamadapter.cc",
+    "base/pathutils.cc",
+    "base/physicalsocketserver.cc",
+    "base/proxydetect.cc",
+    "base/proxyinfo.cc",
+    "base/signalthread.cc",
+    "base/socketadapters.cc",
+    "base/socketaddress.cc",
+    "base/socketpool.cc",
+    "base/ssladapter.cc",
+    "base/sslidentity.cc",
+    "base/sslsocketfactory.cc",
+    "base/sslstreamadapter.cc",
+    "base/stream.cc",
+    "base/stringdigest.cc",
+    "base/stringencode.cc",
+    "base/stringutils.cc",
+    "base/task.cc",
+    "base/taskparent.cc",
+    "base/taskrunner.cc",
+    "base/thread.cc",
+    "base/time.cc",
+    "base/urlencode.cc",
+    "xmllite/qname.cc",
+    "xmllite/xmlbuilder.cc",
+    "xmllite/xmlconstants.cc",
+    "xmllite/xmlelement.cc",
+    "xmllite/xmlnsstack.cc",
+    "xmllite/xmlparser.cc",
+    "xmllite/xmlprinter.cc",
+    "xmpp/constants.cc",
+    "xmpp/jid.cc",
+    "xmpp/ratelimitmanager.cc",
+    "xmpp/saslmechanism.cc",
+    "xmpp/xmppclient.cc",
+    "xmpp/xmppengineimpl.cc",
+    "xmpp/xmppengineimpl_iq.cc",
+    "xmpp/xmpplogintask.cc",
+    "xmpp/xmppstanzaparser.cc",
+    "xmpp/xmpptask.cc",
 ]
 
-mac_src = [
-    "src/talk/base/macconversion.cc",
-    "src/talk/base/macutils.cc",
+darwin_src = [
+    "base/macconversion.cc",
+    "base/macutils.cc",
 ]
 
 posix_src = [
-    "src/talk/base/unixfilesystem.cc",
+    "base/unixfilesystem.cc",
 ]
 
 AddOption(
@@ -103,6 +104,12 @@ AddOption(
 )
 
 AddOption(
+    '--talk',
+    dest='talk',
+    action='store_true',
+)
+
+AddOption(
     '--with-examples',
     dest='examples',
     action='store_true',
@@ -114,15 +121,19 @@ AddOption(
     action='store_true',
 )
 
-AddOption(
-    '--with-perftools',
-    dest='perftools',
-    action='store_true',
-)
-
 if GetOption('debug'):
     flags += ' -g'
     defines += ['_DEBUG']
+
+if GetOption('talk') and GetOption('examples'):
+    Abort("talk can't be compiled with examples.")
+
+if GetOption('talk'):
+    src_path = 'src/talk/'
+
+src = map(lambda p: src_path + p, src)
+posix_src = map(lambda p: src_path + p, posix_src)
+darwin_src = map(lambda p: src_path + p, darwin_src)
 
 if system == 'linux':
     defines += ['LINUX']
@@ -135,7 +146,7 @@ elif system == 'darwin':
         'Security',
         'SystemConfiguration',
     ]
-    src += posix_src + mac_src
+    src += posix_src + darwin_src
 
 env = Environment(
     CXXFLAGS=flags,
@@ -144,11 +155,9 @@ env = Environment(
 
 conf = Configure(env)
 
-if GetOption('perftools'):
-    if conf.CheckCXXHeader('google/tcmalloc.h'):
-        libraries += ['tcmalloc']
-    else:
-        Abort('perftools not found')
+if system in ('darwin', 'linux'):
+    if not conf.CheckCXXHeader('pthread.h'):
+        Abort('pthread.h not found')
 
 libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 

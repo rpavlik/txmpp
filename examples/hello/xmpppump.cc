@@ -1,22 +1,22 @@
 #include "xmpppump.h"
 
-#include <talk/base/logging.h>
+#include <txmpp/base/logging.h>
 #include "xmppauth.h"
 #include "xmpptasks.h"
 
 XmppPump::XmppPump(XmppPumpNotify * notify) {
-  state_ = buzz::XmppEngine::STATE_NONE;
+  state_ = txmpp::XmppEngine::STATE_NONE;
   notify_ = notify;
-  client_ = new buzz::XmppClient(this);  // NOTE: deleted by TaskRunner
+  client_ = new txmpp::XmppClient(this);  // NOTE: deleted by TaskRunner
 }
 
-void XmppPump::DoLogin(const buzz::XmppClientSettings & xcs,
-                       buzz::AsyncSocket* socket,
-                       buzz::PreXmppAuth* auth) {
-  OnStateChange(buzz::XmppEngine::STATE_START);
+void XmppPump::DoLogin(const txmpp::XmppClientSettings & xcs,
+                       txmpp::XmppAsyncSocket* socket,
+                       txmpp::PreXmppAuth* auth) {
+  OnStateChange(txmpp::XmppEngine::STATE_START);
   if (!AllChildrenDone()) {
     client_->SignalStateChange.connect(this, &XmppPump::OnStateChange);
-    if (client_->Connect(xcs, "", socket, auth) != buzz::XMPP_RETURN_OK) {
+    if (client_->Connect(xcs, "", socket, auth) != txmpp::XMPP_RETURN_OK) {
       LOG(LS_ERROR) << "Failed to connect.";
     }
     client_->Start();
@@ -30,13 +30,13 @@ void XmppPump::DoLogin(const buzz::XmppClientSettings & xcs,
 void XmppPump::DoDisconnect() {
   if (!AllChildrenDone())
     client_->Disconnect();
-  OnStateChange(buzz::XmppEngine::STATE_CLOSED);
+  OnStateChange(txmpp::XmppEngine::STATE_CLOSED);
 }
 
-void XmppPump::OnStateChange(buzz::XmppEngine::State state) {
+void XmppPump::OnStateChange(txmpp::XmppEngine::State state) {
   if (state_ == state)
     return;
-  if (state == buzz::XmppEngine::STATE_OPEN)
+  if (state == txmpp::XmppEngine::STATE_OPEN)
     client_->SendRaw("<presence/>");
   state_ = state;
   if (notify_ != NULL)
@@ -44,19 +44,19 @@ void XmppPump::OnStateChange(buzz::XmppEngine::State state) {
 }
 
 void XmppPump::WakeTasks() {
-  talk_base::Thread::Current()->Post(this);
+  txmpp::Thread::Current()->Post(this);
 }
 
 int64 XmppPump::CurrentTime() {
-  return (int64)talk_base::Time();
+  return (int64)txmpp::Time();
 }
 
-void XmppPump::OnMessage(talk_base::Message *pmsg) {
+void XmppPump::OnMessage(txmpp::Message *pmsg) {
   RunTasks();
 }
 
-buzz::XmppReturnStatus XmppPump::SendStanza(const buzz::XmlElement *stanza) {
+txmpp::XmppReturnStatus XmppPump::SendStanza(const txmpp::XmlElement *stanza) {
   if (!AllChildrenDone())
     return client_->SendStanza(stanza);
-  return buzz::XMPP_RETURN_BADSTATE;
+  return txmpp::XMPP_RETURN_BADSTATE;
 }

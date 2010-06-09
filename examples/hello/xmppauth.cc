@@ -1,8 +1,8 @@
 #include "xmppauth.h"
 
 #include <algorithm>
-#include <talk/xmpp/saslcookiemechanism.h>
-#include <talk/xmpp/saslplainmechanism.h>
+#include <txmpp/xmpp/saslcookiemechanism.h>
+#include <txmpp/xmpp/saslplainmechanism.h>
 
 XmppAuth::XmppAuth() : done_(false) {
 }
@@ -10,9 +10,9 @@ XmppAuth::XmppAuth() : done_(false) {
 XmppAuth::~XmppAuth() {
 }
   
-void XmppAuth::StartPreXmppAuth(const buzz::Jid & jid,
-                                const talk_base::SocketAddress & server,
-                                const talk_base::CryptString & pass,
+void XmppAuth::StartPreXmppAuth(const txmpp::Jid & jid,
+                                const txmpp::SocketAddress & server,
+                                const txmpp::CryptString & pass,
                                 const std::string & auth_cookie) {
   jid_ = jid;
   passwd_ = pass;
@@ -34,10 +34,10 @@ std::string XmppAuth::ChooseBestSaslMechanism(const std::vector<std::string> & m
  return "";
 }
 
-buzz::SaslMechanism* XmppAuth::CreateSaslMechanism(
+txmpp::SaslMechanism* XmppAuth::CreateSaslMechanism(
     const std::string & mechanism) {
   if (mechanism == "PLAIN") {
-    return new buzz::SaslPlainMechanism(jid_, passwd_);
+    return new txmpp::SaslPlainMechanism(jid_, passwd_);
   } else {
     return NULL;
   }

@@ -2,28 +2,28 @@
 #define _XMPPAUTH_H_
 
 #include <vector>
-#include <talk/base/cryptstring.h>
-#include <talk/base/sigslot.h>
-#include <talk/xmpp/jid.h>
-#include <talk/xmpp/saslhandler.h>
-#include <talk/xmpp/prexmppauth.h>
+#include <txmpp/base/cryptstring.h>
+#include <txmpp/base/sigslot.h>
+#include <txmpp/xmpp/jid.h>
+#include <txmpp/xmpp/saslhandler.h>
+#include <txmpp/xmpp/prexmppauth.h>
 
-class XmppAuth: public buzz::PreXmppAuth {
+class XmppAuth: public txmpp::PreXmppAuth {
 public:
   XmppAuth();
   virtual ~XmppAuth();
 
-  virtual void StartPreXmppAuth(const buzz::Jid & jid,
-                                const talk_base::SocketAddress & server,
-                                const talk_base::CryptString & pass,
+  virtual void StartPreXmppAuth(const txmpp::Jid & jid,
+                                const txmpp::SocketAddress & server,
+                                const txmpp::CryptString & pass,
                                 const std::string & auth_cookie);
 
   virtual bool IsAuthDone() const { return done_; }
   virtual bool IsAuthorized() const { return true; }
   virtual bool HadError() const { return false; }
   virtual int  GetError() const { return 0; }
-  virtual buzz::CaptchaChallenge GetCaptchaChallenge() const {
-      return buzz::CaptchaChallenge();
+  virtual txmpp::CaptchaChallenge GetCaptchaChallenge() const {
+      return txmpp::CaptchaChallenge();
   }
   virtual std::string GetAuthCookie() const { return auth_cookie_; }
 
@@ -31,12 +31,12 @@ public:
       const std::vector<std::string> & mechanisms,
       bool encrypted);
 
-  virtual buzz::SaslMechanism * CreateSaslMechanism(
+  virtual txmpp::SaslMechanism * CreateSaslMechanism(
       const std::string & mechanism);
 
 private:
-  buzz::Jid jid_;
-  talk_base::CryptString passwd_;
+  txmpp::Jid jid_;
+  txmpp::CryptString passwd_;
   std::string auth_cookie_;
   bool done_;
 };

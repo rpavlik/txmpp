@@ -1,16 +1,16 @@
 #include <iostream>
-#include <talk/base/cryptstring.h>
-#include <talk/base/logging.h>
-#include <talk/xmpp/xmppclientsettings.h>
+#include <txmpp/base/cryptstring.h>
+#include <txmpp/base/logging.h>
+#include <txmpp/xmpp/xmppclientsettings.h>
 #include "xmppthread.h"
 
 int main(int argc, char* argv[]) {
 
-  talk_base::LogMessage::LogToDebug(talk_base::LS_SENSITIVE);
+  txmpp::LogMessage::LogToDebug(txmpp::LS_SENSITIVE);
 
-  talk_base::InsecureCryptStringImpl ipass;
+  txmpp::InsecureCryptStringImpl ipass;
   ipass.password() = "test";
-  talk_base::CryptString password = talk_base::CryptString(ipass);
+  txmpp::CryptString password = txmpp::CryptString(ipass);
 
   start:
 
@@ -19,13 +19,13 @@ int main(int argc, char* argv[]) {
   thread.Start();
 
   // Create client settings
-  buzz::XmppClientSettings xcs;
+  txmpp::XmppClientSettings xcs;
   xcs.set_user("test");
   xcs.set_pass(password);
   xcs.set_host("example.org");
   xcs.set_resource("resource");
   xcs.set_use_tls(true);
-  xcs.set_server(talk_base::SocketAddress("example.org", 5222));
+  xcs.set_server(txmpp::SocketAddress("example.org", 5222));
 
   thread.Login(xcs);
 
