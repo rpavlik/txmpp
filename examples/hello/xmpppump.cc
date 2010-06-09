@@ -20,10 +20,6 @@ void XmppPump::DoLogin(const txmpp::XmppClientSettings & xcs,
       LOG(LS_ERROR) << "Failed to connect.";
     }
     client_->Start();
-
-    // Owned by client_
-    XmppTaskMessage *task_message = new XmppTaskMessage(client_);
-    task_message->Start();
   }
 }
 
@@ -36,8 +32,22 @@ void XmppPump::DoDisconnect() {
 void XmppPump::OnStateChange(txmpp::XmppEngine::State state) {
   if (state_ == state)
     return;
-  if (state == txmpp::XmppEngine::STATE_OPEN)
-    client_->SendRaw("<presence/>");
+  if (state == txmpp::XmppEngine::STATE_OPEN) {
+    // task_message, task_precence and task_iq are deleted by client_
+    //
+    // This accepts <message/> stanzas and prints the sender and message
+    // to stdout
+    XmppTaskMessage *task_message = new XmppTaskMessage(client_);
+    task_message->Start();
+    // This accepts <presence/> stanzas and prints whom they're from
+    // to stdout
+    XmppTaskPresence *task_presence = new XmppTaskPresence(client_);
+    task_presence->Start();
+    // This sends a privacy list request on Start and handles only its
+    // response
+    XmppTaskIq *task_iq = new XmppTaskIq(client_);
+    task_iq->Start();
+  }
   state_ = state;
   if (notify_ != NULL)
     notify_->OnStateChange(state);
