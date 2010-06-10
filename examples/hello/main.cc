@@ -10,9 +10,8 @@ int main(int argc, char* argv[]) {
 
   txmpp::LogMessage::LogToDebug(txmpp::LS_SENSITIVE);
 
-  txmpp::InsecureCryptStringImpl ipass;
-  ipass.password() = "test";
-  txmpp::CryptString password = txmpp::CryptString(ipass);
+  txmpp::InsecureCryptStringImpl password;
+  password.password() = "test";
 
   while (reconnect) {
 
@@ -23,7 +22,7 @@ int main(int argc, char* argv[]) {
     // Create client settings
     txmpp::XmppClientSettings xcs;
     xcs.set_user("test");
-    xcs.set_pass(password);
+    xcs.set_pass(txmpp::CryptString(password));
     xcs.set_host("example.org");
     xcs.set_resource("resource");
     xcs.set_use_tls(true);

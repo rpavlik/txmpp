@@ -6,24 +6,23 @@
 #include "xmpppump.h"
 #include "xmppsocket.h"
 
-class XmppThread:
-    public txmpp::Thread, XmppPumpNotify, txmpp::MessageHandler {
-public:
-  XmppThread();
-  ~XmppThread();
+class XmppThread: public txmpp::Thread, XmppPumpNotify, txmpp::MessageHandler {
+  public:
+    XmppThread();
+    ~XmppThread();
 
-  txmpp::XmppClient* client() { return pump_->client(); }
+    txmpp::XmppClient* client() { return pump_->client(); }
 
-  void ProcessMessages(int cms);
+    void ProcessMessages(int cms);
 
-  void Login(const txmpp::XmppClientSettings & xcs);
-  void Disconnect();
+    void Login(const txmpp::XmppClientSettings & xcs);
+    void Disconnect();
 
-private:
-  XmppPump* pump_;
+  private:
+    XmppPump* pump_;
 
-  void OnStateChange(txmpp::XmppEngine::State state);
-  void OnMessage(txmpp::Message* pmsg);
+    void OnStateChange(txmpp::XmppEngine::State state);
+    void OnMessage(txmpp::Message* pmsg);
 };
 
-#endif // _XMPPTHREAD_H_
+#endif  // _XMPPTHREAD_H_
