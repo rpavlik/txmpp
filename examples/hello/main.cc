@@ -6,41 +6,43 @@
 
 int main(int argc, char* argv[]) {
 
+  bool reconnect = true;
+
   txmpp::LogMessage::LogToDebug(txmpp::LS_SENSITIVE);
 
   txmpp::InsecureCryptStringImpl ipass;
   ipass.password() = "test";
   txmpp::CryptString password = txmpp::CryptString(ipass);
 
-  start:
+  while (reconnect) {
 
-  // Start xmpp on a different thread
-  XmppThread thread;
-  thread.Start();
+    // Start xmpp on a different thread
+    XmppThread thread;
+    thread.Start();
 
-  // Create client settings
-  txmpp::XmppClientSettings xcs;
-  xcs.set_user("test");
-  xcs.set_pass(password);
-  xcs.set_host("example.org");
-  xcs.set_resource("resource");
-  xcs.set_use_tls(true);
-  xcs.set_server(txmpp::SocketAddress("example.org", 5222));
+    // Create client settings
+    txmpp::XmppClientSettings xcs;
+    xcs.set_user("test");
+    xcs.set_pass(password);
+    xcs.set_host("example.org");
+    xcs.set_resource("resource");
+    xcs.set_use_tls(true);
+    xcs.set_server(txmpp::SocketAddress("example.org", 5222));
 
-  thread.Login(xcs);
+    thread.Login(xcs);
 
-  // Use main thread for console input
-  std::string line;
-  while (std::getline(std::cin, line)) {
-    if (line == "quit" || line == "continue")
-      break;
+    // Use main thread for console input
+    std::string line;
+    while (std::getline(std::cin, line)) {
+      if (line == "quit")
+        reconnect = false;
+      if (line == "continue" || line == "quit")
+        break;
+    }
+
+    thread.Disconnect();
+    thread.Stop();
   }
-
-  thread.Disconnect();
-  thread.Stop();
-
-  if (line == "continue")
-    goto start;
 
   return 0;
 }
