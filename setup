@@ -28,11 +28,19 @@ function modify-file {
   $SED 's/include "talk/include "txmpp/g' "$1"
 }
 
+function clean {
+  for name in "base" "xmllite" "xmpp"; do
+    find "src/txmpp/$name" -name '*.o' -delete
+    find "src/txmpp/$name" -name '*.os' -delete
+  done
+}
+
 function convert {
 
   # Clean and copy over talk code
   rm -fr src/txmpp/{base,xmllite,xmpp}
   cp -r src/talk/{base,xmllite,xmpp} src/txmpp
+  clean
 
   # See the first ised in modify-file. This converts references to AsyncSocket
   # in the buzz namespace (not explicitly namespaced like the others).
@@ -46,16 +54,13 @@ function convert {
   done
 }
 
-function clean {
-  find . -name '*.o' -delete
-  find . -name '*.os' -delete
-}
-
 function fail {
-  echo "Unable to setup."
+  echo "Unable to run setup."
   exit 1
 }
 
+# Ensure we're in the right directory
 cd "$( dirname "$0" )" &>/dev/null || fail
 
-clean && convert
+# Copy code and convert namespaces
+convert
