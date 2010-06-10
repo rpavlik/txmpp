@@ -15,32 +15,35 @@ function modify-file {
   sed -i.backup 's/include "talk/include "txmpp/g' "$1"
 }
 
-function create {
-  echo "Removing old txmpp files"
+function convert {
   rm -fr src/txmpp/{base,xmllite,xmpp}
 
-  echo "Copying talk files to txmpp"
   mkdir -p src/txmpp
   cp -r src/talk/{base,xmllite,xmpp} src/txmpp
 
-  echo "Renaming AsyncSocket to avoid namespace conflicts"
   sed -i.backup 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
   sed -i.backup 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
   sed -i.backup 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
 
-  echo "Converting namespace to txmpp"
   for path in $( find src/txmpp -name '*.h' -or -name '*.cc' ); do
     modify-file $path
   done
-
-  echo "Cleaning up"
-  find . -name '*.backup' -delete
-
-  echo "Done"
 }
 
-if [[ "$1" == "understand" ]]; then
-  create
-else
-  echo "Read and understand the script before running."
-fi
+function pre-clean {
+  find . -name '*.o' -delete
+  find . -name '*.os' -delete
+}
+
+function post-clean {
+  find . -name '*.backup' -delete
+}
+
+function fail {
+  echo "Unable to setup."
+  exit 1
+}
+
+cd "$( dirname "$0" )" &>/dev/null || fail
+
+pre-clean && convert && post-clean
