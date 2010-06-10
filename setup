@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-function ised {
-  if [[ $( uname ) == "Darwin" ]]; then
-    sed -i '' "$1" "$2"
-  else
-    sed -i "$1" "$2"
-  fi
-}
+shopt -s expand_aliases
+
+if [[ $( uname ) == "Darwin" ]]; then
+  alias ised="sed -i ''"
+else
+  alias ised="sed -i"
+fi
 
 function modify-file {
 
