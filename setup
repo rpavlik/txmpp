@@ -1,42 +1,54 @@
 #!/usr/bin/env bash
 
+if [[ $( uname ) == "Darwin" ]]; then
+  export SED="sed -i ''"
+else
+  export SED="sed -i"
+fi
+
 function modify-file {
-  sed -i.backup 's/buzz::AsyncSocket/buzz::XmppAsyncSocket/g' "$1"
 
-  sed -i.backup 's/talk_base::/txmpp::/g' "$1"
-  sed -i.backup 's/namespace talk_base/namespace txmpp/g' "$1"
+  # Rename the AsyncSocket class found in xmpp/asyncsocket.h because it
+  # conflicts with the one in base/asyncsocket.h
+  $SED 's/buzz::AsyncSocket/buzz::XmppAsyncSocket/g' "$1"
 
-  sed -i.backup 's/buzz::/txmpp::/g' "$1"
-  sed -i.backup 's/namespace buzz/namespace txmpp/g' "$1"
+  # Convert talk_base namespace
+  $SED 's/talk_base::/txmpp::/g' "$1"
+  $SED 's/namespace talk_base/namespace txmpp/g' "$1"
 
-  sed -i.backup 's/sigslot::/txmpp::/g' "$1"
-  sed -i.backup 's/namespace sigslot/namespace txmpp/g' "$1"
+  # Convert buzz namespace
+  $SED 's/buzz::/txmpp::/g' "$1"
+  $SED 's/namespace buzz/namespace txmpp/g' "$1"
 
-  sed -i.backup 's/include "talk/include "txmpp/g' "$1"
+  # Convert sigslot namespace
+  $SED 's/sigslot::/txmpp::/g' "$1"
+  $SED 's/namespace sigslot/namespace txmpp/g' "$1"
+
+  # Convert includes
+  $SED 's/include "talk/include "txmpp/g' "$1"
 }
 
 function convert {
-  rm -fr src/txmpp/{base,xmllite,xmpp}
 
-  mkdir -p src/txmpp
+  # Clean and copy over talk code
+  rm -fr src/txmpp/{base,xmllite,xmpp}
   cp -r src/talk/{base,xmllite,xmpp} src/txmpp
 
-  sed -i.backup 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
-  sed -i.backup 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
-  sed -i.backup 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+  # See the first ised in modify-file. This converts references to AsyncSocket
+  # in the buzz namespace (not explicitly namespaced like the others).
+  $SED 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
+  $SED 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+  $SED 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
 
+  # Convert namespaces
   for path in $( find src/txmpp -name '*.h' -or -name '*.cc' ); do
     modify-file $path
   done
 }
 
-function pre-clean {
+function clean {
   find . -name '*.o' -delete
   find . -name '*.os' -delete
-}
-
-function post-clean {
-  find . -name '*.backup' -delete
 }
 
 function fail {
@@ -46,4 +58,4 @@ function fail {
 
 cd "$( dirname "$0" )" &>/dev/null || fail
 
-pre-clean && convert && post-clean
+clean && convert
