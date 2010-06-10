@@ -1,31 +1,33 @@
 #!/usr/bin/env bash
 
-if [[ $( uname ) == "Darwin" ]]; then
-  export SED="sed -i ''"
-else
-  export SED="sed -i"
-fi
+function ised {
+  if [[ $( uname ) == "Darwin" ]]; then
+    sed -i '' "$1" "$2"
+  else
+    sed -i "$1" "$2"
+  fi
+}
 
 function modify-file {
 
   # Rename the AsyncSocket class found in xmpp/asyncsocket.h because it
   # conflicts with the one in base/asyncsocket.h
-  $SED 's/buzz::AsyncSocket/buzz::XmppAsyncSocket/g' "$1"
+  ised 's/buzz::AsyncSocket/buzz::XmppAsyncSocket/g' "$1"
 
   # Convert talk_base namespace
-  $SED 's/talk_base::/txmpp::/g' "$1"
-  $SED 's/namespace talk_base/namespace txmpp/g' "$1"
+  ised 's/talk_base::/txmpp::/g' "$1"
+  ised 's/namespace talk_base/namespace txmpp/g' "$1"
 
   # Convert buzz namespace
-  $SED 's/buzz::/txmpp::/g' "$1"
-  $SED 's/namespace buzz/namespace txmpp/g' "$1"
+  ised 's/buzz::/txmpp::/g' "$1"
+  ised 's/namespace buzz/namespace txmpp/g' "$1"
 
   # Convert sigslot namespace
-  $SED 's/sigslot::/txmpp::/g' "$1"
-  $SED 's/namespace sigslot/namespace txmpp/g' "$1"
+  ised 's/sigslot::/txmpp::/g' "$1"
+  ised 's/namespace sigslot/namespace txmpp/g' "$1"
 
   # Convert includes
-  $SED 's/include "talk/include "txmpp/g' "$1"
+  ised 's/include "talk/include "txmpp/g' "$1"
 }
 
 function clean {
@@ -44,9 +46,9 @@ function convert {
 
   # See the first ised in modify-file. This converts references to AsyncSocket
   # in the buzz namespace (not explicitly namespaced like the others).
-  $SED 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
-  $SED 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
-  $SED 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+  ised 's/AsyncSocket/XmppAsyncSocket/g' src/txmpp/xmpp/asyncsocket.h
+  ised 's/ AsyncSocket/ XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
+  ised 's/<AsyncSocket/<XmppAsyncSocket/g' src/txmpp/xmpp/*.{cc,h}
 
   # Convert namespaces
   for path in $( find src/txmpp -name '*.h' -or -name '*.cc' ); do
