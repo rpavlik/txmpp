@@ -27,7 +27,6 @@ src = [
     'src/firewallsocketserver.cc',
     'src/flags.cc',
     'src/helpers.cc',
-    'src/host.cc',
     'src/httpbase.cc',
     'src/httpclient.cc',
     'src/httpcommon.cc',

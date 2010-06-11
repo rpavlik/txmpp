@@ -54,7 +54,6 @@
 #include <cstring>
 #include <sstream>
 
-#include "host.h"
 #include "logging.h"
 #include "scoped_ptr.h"
 #include "socket.h"  // includes something that makes windows happy
