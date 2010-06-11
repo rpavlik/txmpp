@@ -4,6 +4,10 @@
 #ifndef _TXMPP_LINUX_H_
 #define _TXMPP_LINUX_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef LINUX
 #include <string>
 #include <map>

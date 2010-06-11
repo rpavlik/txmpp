@@ -28,6 +28,10 @@
 #ifndef _TXMPP_TIME_H_
 #define _TXMPP_TIME_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifndef WIN32
 #include_next <time.h>
 #endif

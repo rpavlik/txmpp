@@ -28,6 +28,10 @@
 #ifndef _TXMPP_WINPING_H_
 #define _TXMPP_WINPING_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef WIN32
 
 #include "win32.h"

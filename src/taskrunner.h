@@ -28,6 +28,10 @@
 #ifndef _TXMPP_TASKRUNNER_H_
 #define _TXMPP_TASKRUNNER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <vector>
 
 #include "basictypes.h"

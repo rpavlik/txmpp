@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPLOGINTASLK_H_
 #define _TXMPP_XMPPLOGINTASLK_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "jid.h"
 #include "logging.h"

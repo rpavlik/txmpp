@@ -28,6 +28,10 @@
 #ifndef _TXMPP_PROXYINFO_H_
 #define _TXMPP_PROXYINFO_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "socketaddress.h"
 #include "cryptstring.h"

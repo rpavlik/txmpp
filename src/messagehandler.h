@@ -28,6 +28,10 @@
 #ifndef _TXMPP_MESSAGEHANDLER_H_
 #define _TXMPP_MESSAGEHANDLER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 namespace txmpp {
 
 struct Message;

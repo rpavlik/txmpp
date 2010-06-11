@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMLBUILDER_H_
 #define _TXMPP_XMLBUILDER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include <vector>
 #include "scoped_ptr.h"

@@ -28,6 +28,10 @@
 #ifndef _TXMPP_PLAINSASLHANDLER_H_
 #define _TXMPP_PLAINSASLHANDLER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <algorithm>
 #include "saslhandler.h"
 

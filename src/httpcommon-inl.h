@@ -28,6 +28,10 @@
 #ifndef _TXMPP_HTTPCOMMON_INL_H_
 #define _TXMPP_HTTPCOMMON_INL_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "common.h"
 #include "httpcommon.h"
 

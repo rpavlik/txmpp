@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPENGINE_H_
 #define _TXMPP_XMPPENGINE_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 // also part of the API
 #include "jid.h"
 #include "qname.h"

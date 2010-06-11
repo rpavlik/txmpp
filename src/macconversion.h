@@ -28,6 +28,10 @@
 #ifndef _TXMPP_MACCONVERSION_H_
 #define _TXMPP_MACCONVERSION_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef OSX
 
 #include <CoreFoundation/CoreFoundation.h>

@@ -28,6 +28,10 @@
 #ifndef _TXMPP_WINFIREWALL_H_
 #define _TXMPP_WINFIREWALL_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifndef _HRESULT_DEFINED
 #define _HRESULT_DEFINED
 typedef long HRESULT;  // Can't forward declare typedef, but don't need all win

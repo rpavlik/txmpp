@@ -28,6 +28,10 @@
 #ifndef _TXMPP_PATHUTILS_H_
 #define _TXMPP_PATHUTILS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 // Temporary, until deprecated helpers are removed.
 #include "fileutils.h"

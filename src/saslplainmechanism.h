@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SASLPLAINMECHANISM_H_
 #define _TXMPP_SASLPLAINMECHANISM_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "cryptstring.h"
 #include "saslmechanism.h"
 

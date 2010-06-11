@@ -28,6 +28,10 @@
 #ifndef _TXMPP_MACUTILS_H_
 #define _TXMPP_MACUTILS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <CoreFoundation/CoreFoundation.h>
 #include <Carbon/Carbon.h>
 #include <string>

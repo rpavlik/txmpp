@@ -28,6 +28,10 @@
 #ifndef _TXMPP_OPENSSLADAPTER_H_
 #define _TXMPP_OPENSSLADAPTER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "ssladapter.h"
 

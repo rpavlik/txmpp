@@ -25,9 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 #ifndef _TXMPP_STRINGDIGEST_H_
 #define _TXMPP_STRINGDIGEST_H_
+
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
 
 #include <string>
 

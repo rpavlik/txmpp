@@ -28,6 +28,10 @@
 #ifndef TXMPP_ASYNCFILE_H_
 #define TXMPP_ASYNCFILE_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "sigslot.h"
 
 namespace txmpp {

@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SIGSLOTREPEATER_H__
 #define _TXMPP_SIGSLOTREPEATER_H__
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 // repeaters are both signals and slots, which are designed as intermediate
 // pass-throughs for signals and slots which don't know about each other (for
 // modularity or encapsulation).  This eliminates the need to declare a signal

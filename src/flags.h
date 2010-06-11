@@ -37,6 +37,10 @@
 #ifndef _TXMPP_FLAGS_H_
 #define _TXMPP_FLAGS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <assert.h>
 
 #include "checks.h"

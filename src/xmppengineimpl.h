@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPENGINEIMPL_H_
 #define _TXMPP_XMPPENGINEIMPL_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <sstream>
 #include <vector>
 #include "xmppengine.h"

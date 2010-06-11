@@ -28,6 +28,10 @@
 #ifndef _TXMPP_BYTEORDER_H_
 #define _TXMPP_BYTEORDER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef POSIX
 #include <arpa/inet.h>
 #endif

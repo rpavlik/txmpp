@@ -28,6 +28,10 @@
 #ifndef _TXMPP_STREAM_H_
 #define _TXMPP_STREAM_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "basictypes.h"
 #include "criticalsection.h"
 #include "logging.h"

@@ -27,9 +27,12 @@
 
 // This module contains some basic debugging facilities.
 
-
 #ifndef _TXMPP_CHECKS_H_
 #define _TXMPP_CHECKS_H_
+
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
 
 #include <string.h>
 

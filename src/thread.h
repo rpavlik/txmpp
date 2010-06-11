@@ -28,6 +28,10 @@
 #ifndef _TXMPP_THREAD_H_
 #define _TXMPP_THREAD_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <algorithm>
 #include <list>
 #include <vector>

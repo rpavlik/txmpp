@@ -28,6 +28,10 @@
 #ifndef _TXMPP_MESSAGEQUEUE_H_
 #define _TXMPP_MESSAGEQUEUE_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <algorithm>
 #include <cstring>
 #include <list>

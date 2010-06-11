@@ -18,6 +18,10 @@
 #ifndef _TXMPP_MD5_H_
 #define _TXMPP_MD5_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif

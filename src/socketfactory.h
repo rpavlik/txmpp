@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SOCKETFACTORY_H__
 #define _TXMPP_SOCKETFACTORY_H__
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "socket.h"
 #include "asyncsocket.h"
 

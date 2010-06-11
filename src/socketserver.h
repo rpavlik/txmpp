@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SOCKETSERVER_H_
 #define _TXMPP_SOCKETSERVER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "socketfactory.h"
 
 namespace txmpp {

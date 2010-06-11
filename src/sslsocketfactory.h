@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SSLSOCKETFACTORY_H_
 #define _TXMPP_SSLSOCKETFACTORY_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "proxyinfo.h"
 #include "socketserver.h"
 

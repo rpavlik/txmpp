@@ -27,6 +27,10 @@
 #ifndef _TXMPP_JID_H_
 #define _TXMPP_JID_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "basictypes.h"
 #include "xmlconstants.h"

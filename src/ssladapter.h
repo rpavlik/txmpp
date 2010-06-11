@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SSLADAPTER_H_
 #define _TXMPP_SSLADAPTER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "asyncsocket.h"
 
 namespace txmpp {

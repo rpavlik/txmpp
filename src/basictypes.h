@@ -28,7 +28,7 @@
 #ifndef _TXMPP_BASICTYPES_H_
 #define _TXMPP_BASICTYPES_H_
 
-#ifdef HAVE_CONFIG_H
+#ifndef NO_CONFIG_H
 #include "config.h"
 #endif
 

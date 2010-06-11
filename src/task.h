@@ -28,6 +28,10 @@
 #ifndef _TXMPP_TASK_H_
 #define _TXMPP_TASK_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "basictypes.h"
 #include "scoped_ptr.h"

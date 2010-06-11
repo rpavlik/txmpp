@@ -28,6 +28,10 @@
 #ifndef _TXMPP_CRYPTSTRING_H_
 #define _TXMPP_CRYPTSTRING_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <cstring>
 #include <string>
 #include <vector>

@@ -28,6 +28,10 @@
 #ifndef TXMPP_CONSTANTS_H_
 #define TXMPP_CONSTANTS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "qname.h"
 #include "jid.h"

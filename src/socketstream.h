@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SOCKET_STREAM_H_
 #define _TXMPP_SOCKET_STREAM_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "asyncsocket.h"
 #include "common.h"
 #include "stream.h"

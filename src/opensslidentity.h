@@ -28,6 +28,10 @@
 #ifndef _TXMPP_OPENSSLIDENTITY_H__
 #define _TXMPP_OPENSSLIDENTITY_H__
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <openssl/evp.h>
 #include <openssl/x509.h>
 

@@ -28,6 +28,10 @@
 #ifndef _TXMPP_HTTPCLIENT_H_
 #define _TXMPP_HTTPCLIENT_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "common.h"
 #include "httpbase.h"
 #include "proxyinfo.h"

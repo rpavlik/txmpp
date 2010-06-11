@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMLPARSER_H_
 #define _TXMPP_XMLPARSER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "xmlnsstack.h"
 #include <expat.h>

@@ -28,6 +28,10 @@
 #ifndef _TXMPP_COMMON_H_
 #define _TXMPP_COMMON_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "constructormagic.h"
 
 #if defined(_MSC_VER)

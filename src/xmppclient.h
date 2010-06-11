@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPCLIENT_H_
 #define _TXMPP_XMPPCLIENT_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "basicdefs.h"
 #include "sigslot.h"

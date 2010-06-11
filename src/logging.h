@@ -61,8 +61,8 @@
 #ifndef _TXMPP_LOGGING_H_
 #define _TXMPP_LOGGING_H_
 
-#ifdef HAVE_CONFIG_H
-#include "config.h"  // NOLINT
+#ifndef NO_CONFIG_H
+#include "config.h"
 #endif
 
 #include <list>

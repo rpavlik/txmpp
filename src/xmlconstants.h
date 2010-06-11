@@ -34,6 +34,10 @@
 #ifndef _TXMPP_XMLCONSTANTS_H_
 #define _TXMPP_XMLCONSTANTS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 
 #define STR_EMPTY    XmlConstants::str_empty()

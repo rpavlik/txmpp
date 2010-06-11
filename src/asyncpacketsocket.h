@@ -28,6 +28,10 @@
 #ifndef TXMPP_ASYNCPACKETSOCKET_H_
 #define TXMPP_ASYNCPACKETSOCKET_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "asyncsocket.h"
 
 namespace txmpp {

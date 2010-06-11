@@ -28,6 +28,10 @@
 #ifndef TXMPP_ASYNCHTTPREQUEST_H_
 #define TXMPP_ASYNCHTTPREQUEST_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "event.h"
 #include "httpclient.h"

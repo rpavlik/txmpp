@@ -28,6 +28,10 @@
 #ifndef _TXMPP_EVENT_H_
 #define _TXMPP_EVENT_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #if defined(WIN32)
 #include "win32.h"  // NOLINT: consider this a system header.
 #elif defined(POSIX)

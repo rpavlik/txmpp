@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SCHANNELADAPTER_H_
 #define _TXMPP_SCHANNELADAPTER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "ssladapter.h"
 #include "messagequeue.h"

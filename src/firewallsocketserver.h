@@ -28,6 +28,10 @@
 #ifndef _TXMPP_FIREWALLSOCKETSERVER_H_
 #define _TXMPP_FIREWALLSOCKETSERVER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <vector>
 #include "socketserver.h"
 #include "criticalsection.h"

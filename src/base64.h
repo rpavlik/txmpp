@@ -12,6 +12,10 @@
 #ifndef TXMPP_BASE64_H__
 #define TXMPP_BASE64_H__
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include <vector>
 

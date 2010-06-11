@@ -28,6 +28,10 @@
 #ifndef TXMPP_AUTODETECTPROXY_H_
 #define TXMPP_AUTODETECTPROXY_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 
 #include "cryptstring.h"

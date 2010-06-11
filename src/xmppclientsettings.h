@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPCLIENTSETTINGS_H_
 #define _TXMPP_XMPPCLIENTSETTINGS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "cryptstring.h"
 #include "proxyinfo.h"
 

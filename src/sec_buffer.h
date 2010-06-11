@@ -30,6 +30,10 @@
 #ifndef _TXMPP_SEC_BUFFER_H_
 #define _TXMPP_SEC_BUFFER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 namespace txmpp {
 
 // A base class for CSecBuffer<T>. Contains

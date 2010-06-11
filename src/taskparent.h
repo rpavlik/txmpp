@@ -28,6 +28,10 @@
 #ifndef _TXMPP_TASKPARENT_H_
 #define _TXMPP_TASKPARENT_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <set>
 
 #include "basictypes.h"

@@ -28,11 +28,11 @@
 #ifndef _TXMPP_PROXYDETECT_H_
 #define _TXMPP_PROXYDETECT_H_
 
-#include "proxyinfo.h"
-
-#ifdef HAVE_CONFIG_H
+#ifndef NO_CONFIG_H
 #include "config.h"
 #endif
+
+#include "proxyinfo.h"
 
 namespace txmpp {
 // Auto-detect the proxy server.  Returns true if a proxy is configured,

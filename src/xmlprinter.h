@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMLPRINTER_H_
 #define _TXMPP_XMLPRINTER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <iosfwd>
 #include <string>
 #include "scoped_ptr.h"

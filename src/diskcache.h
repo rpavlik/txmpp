@@ -28,6 +28,10 @@
 #ifndef _TXMPP_DISKCACHE_H_
 #define _TXMPP_DISKCACHE_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <map>
 #include <string>
 

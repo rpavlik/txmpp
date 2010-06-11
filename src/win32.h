@@ -28,6 +28,10 @@
 #ifndef _TXMPP_WIN32_H_
 #define _TXMPP_WIN32_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef WIN32
 
 #ifndef WIN32_LEAN_AND_MEAN

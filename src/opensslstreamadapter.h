@@ -28,6 +28,10 @@
 #ifndef _TXMPP_OPENSSLSTREAMADAPTER_H_
 #define _TXMPP_OPENSSLSTREAMADAPTER_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <string>
 #include "sslstreamadapter.h"
 #include "opensslidentity.h"

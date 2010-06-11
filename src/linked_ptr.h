@@ -39,6 +39,10 @@
 
 namespace txmpp {
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 /* For ANSI-challenged compilers, you may want to #define
  * NO_MEMBER_TEMPLATES, explicit or mutable */
 #define NO_MEMBER_TEMPLATES

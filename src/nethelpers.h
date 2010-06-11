@@ -28,6 +28,10 @@
 #ifndef _TXMPP_NETHELPERS_H_
 #define _TXMPP_NETHELPERS_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #ifdef POSIX
 #include <netdb.h>
 #include <cstddef>

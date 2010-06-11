@@ -28,6 +28,10 @@
 #ifndef _TXMPP_PHYSICALSOCKETSERVER_H__
 #define _TXMPP_PHYSICALSOCKETSERVER_H__
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <vector>
 
 #include "asyncfile.h"

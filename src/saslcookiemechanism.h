@@ -28,6 +28,10 @@
 #ifndef _TXMPP_SASLCOOKIEMECHANISM_H_
 #define _TXMPP_SASLCOOKIEMECHANISM_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "constants.h"
 #include "qname.h"
 #include "saslmechanism.h"
