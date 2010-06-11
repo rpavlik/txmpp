@@ -11,11 +11,11 @@
 #include <openssl/ssl.h>
 #include <openssl/x509v3.h>
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/openssladapter.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/Equifax_Secure_Global_eBusiness_CA-1.h"
+#include "common.h"
+#include "logging.h"
+#include "openssladapter.h"
+#include "stringutils.h"
+#include "Equifax_Secure_Global_eBusiness_CA-1.h"
 
 // TODO: Use a nicer abstraction for mutex.
 

@@ -29,7 +29,7 @@
 #define _TXMPP_CRITICALSECTION_H_
 
 #ifdef WIN32
-#include "txmpp/base/win32.h"
+#include "win32.h"
 #endif
 
 #ifdef POSIX

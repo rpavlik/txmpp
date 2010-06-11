@@ -25,16 +25,16 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/httprequest.h"
+#include "httprequest.h"
 
-#include "txmpp/common.h"
-#include "txmpp/firewallsocketserver.h"
-#include "txmpp/httpclient.h"
-#include "txmpp/logging.h"
-#include "txmpp/physicalsocketserver.h"
-#include "txmpp/socketadapters.h"
-#include "txmpp/socketpool.h"
-#include "txmpp/ssladapter.h"
+#include "common.h"
+#include "firewallsocketserver.h"
+#include "httpclient.h"
+#include "logging.h"
+#include "physicalsocketserver.h"
+#include "socketadapters.h"
+#include "socketpool.h"
+#include "ssladapter.h"
 
 namespace tyrion {
 

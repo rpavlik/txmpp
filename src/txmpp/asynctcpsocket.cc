@@ -29,13 +29,13 @@
 #pragma warning(disable:4786)
 #endif
 
-#include "txmpp/asynctcpsocket.h"
+#include "asynctcpsocket.h"
 
 #include <cstring>
 
-#include "txmpp/byteorder.h"
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
+#include "byteorder.h"
+#include "common.h"
+#include "logging.h"
 
 #if defined(_MSC_VER) && _MSC_VER < 1300
 namespace std {

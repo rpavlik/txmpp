@@ -28,14 +28,14 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "txmpp/base64.h"
-#include "txmpp/common.h"
-#include "txmpp/xmlelement.h"
-#include "txmpp/constants.h"
-#include "txmpp/jid.h"
-#include "txmpp/saslmechanism.h"
-#include "txmpp/xmppengineimpl.h"
-#include "txmpp/xmpplogintask.h"
+#include "base64.h"
+#include "common.h"
+#include "xmlelement.h"
+#include "constants.h"
+#include "jid.h"
+#include "saslmechanism.h"
+#include "xmppengineimpl.h"
+#include "xmpplogintask.h"
 
 namespace txmpp {
 

@@ -37,11 +37,11 @@
 
 #include <sstream>
 
-#include "txmpp/byteorder.h"
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/nethelpers.h"
-#include "txmpp/socketaddress.h"
+#include "byteorder.h"
+#include "common.h"
+#include "logging.h"
+#include "nethelpers.h"
+#include "socketaddress.h"
 
 #ifdef WIN32
 // Win32 doesn't provide inet_aton, so we add our own version here.

@@ -28,8 +28,8 @@
 #define _TXMPP_JID_H_
 
 #include <string>
-#include "txmpp/basictypes.h"
-#include "txmpp/xmlconstants.h"
+#include "basictypes.h"
+#include "xmlconstants.h"
 
 namespace txmpp {
 

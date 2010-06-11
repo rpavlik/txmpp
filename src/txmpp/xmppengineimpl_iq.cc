@@ -27,9 +27,9 @@
 
 #include <vector>
 #include <algorithm>
-#include "txmpp/common.h"
-#include "txmpp/xmppengineimpl.h"
-#include "txmpp/constants.h"
+#include "common.h"
+#include "xmppengineimpl.h"
+#include "constants.h"
 
 namespace txmpp {
 

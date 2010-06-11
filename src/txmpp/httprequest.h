@@ -28,12 +28,12 @@
 #ifndef _TXMPP_HTTPREQUEST_H_
 #define _TXMPP_HTTPREQUEST_H_
 
-#include "txmpp/httpclient.h"
-#include "txmpp/logging.h"
-#include "txmpp/proxyinfo.h"
-#include "txmpp/socketserver.h"
-#include "txmpp/thread.h"
-#include "txmpp/sslsocketfactory.h"  // Deprecated include
+#include "httpclient.h"
+#include "logging.h"
+#include "proxyinfo.h"
+#include "socketserver.h"
+#include "thread.h"
+#include "sslsocketfactory.h"  // Deprecated include
 
 namespace txmpp {
 

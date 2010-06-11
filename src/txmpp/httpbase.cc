@@ -30,17 +30,17 @@
 // Author: <bpm@google.com> (Brian McBarron)
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #else  // !WIN32
 #define SEC_E_CERT_EXPIRED (-2146893016)
 #endif  // !WIN32
 
-#include "txmpp/common.h"
-#include "txmpp/httpbase.h"
-#include "txmpp/logging.h"
-#include "txmpp/socket.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/thread.h"
+#include "common.h"
+#include "httpbase.h"
+#include "logging.h"
+#include "socket.h"
+#include "stringutils.h"
+#include "thread.h"
 
 namespace txmpp {
 

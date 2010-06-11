@@ -28,7 +28,7 @@
 #ifndef _TXMPP_PROXYDETECT_H_
 #define _TXMPP_PROXYDETECT_H_
 
-#include "txmpp/proxyinfo.h"
+#include "proxyinfo.h"
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"

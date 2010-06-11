@@ -29,8 +29,8 @@
 #include "config.h"
 #endif
 
-#include "txmpp/network.h"
-#include "txmpp/stream.h"
+#include "network.h"
+#include "stream.h"
 
 #ifdef POSIX
 #include <sys/socket.h>
@@ -42,7 +42,7 @@
 #endif  // POSIX
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <Iphlpapi.h>
 #endif
 
@@ -54,12 +54,12 @@
 #include <cstring>
 #include <sstream>
 
-#include "txmpp/host.h"
-#include "txmpp/logging.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/socket.h"  // includes something that makes windows happy
-#include "txmpp/stringencode.h"
-#include "txmpp/time.h"
+#include "host.h"
+#include "logging.h"
+#include "scoped_ptr.h"
+#include "socket.h"  // includes something that makes windows happy
+#include "stringencode.h"
+#include "time.h"
 
 namespace {
 

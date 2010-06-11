@@ -28,7 +28,7 @@
 #ifndef _TXMPP_COMMON_H_
 #define _TXMPP_COMMON_H_
 
-#include "txmpp/constructormagic.h"
+#include "constructormagic.h"
 
 #if defined(_MSC_VER)
 // warning C4355: 'this' : used in base member initializer list

@@ -51,15 +51,15 @@
 #include <algorithm>
 #include <map>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/byteorder.h"
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/nethelpers.h"
-#include "txmpp/physicalsocketserver.h"
-#include "txmpp/time.h"
-#include "txmpp/winping.h"
-#include "txmpp/win32socketinit.h"
+#include "basictypes.h"
+#include "byteorder.h"
+#include "common.h"
+#include "logging.h"
+#include "nethelpers.h"
+#include "physicalsocketserver.h"
+#include "time.h"
+#include "winping.h"
+#include "win32socketinit.h"
 
 // stm: this will tell us if we are on OSX
 #ifdef HAVE_CONFIG_H

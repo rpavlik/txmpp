@@ -28,8 +28,8 @@
 #ifndef _TXMPP_SASLPLAINMECHANISM_H_
 #define _TXMPP_SASLPLAINMECHANISM_H_
 
-#include "txmpp/cryptstring.h"
-#include "txmpp/saslmechanism.h"
+#include "cryptstring.h"
+#include "saslmechanism.h"
 
 namespace txmpp {
 

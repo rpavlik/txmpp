@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/unixfilesystem.h"
+#include "unixfilesystem.h"
 
 #include <errno.h>
 #include <stdlib.h>
@@ -35,7 +35,7 @@
 #include <Carbon/Carbon.h>
 #include <IOKit/IOCFBundle.h>
 #include <sys/statvfs.h>
-#include "txmpp/macutils.h"
+#include "macutils.h"
 #endif  // OSX
 
 #if defined(POSIX) && !defined(OSX)
@@ -55,10 +55,10 @@
 #include <algorithm>
 #endif
 
-#include "txmpp/fileutils.h"
-#include "txmpp/pathutils.h"
-#include "txmpp/stream.h"
-#include "txmpp/stringutils.h"
+#include "fileutils.h"
+#include "pathutils.h"
+#include "stream.h"
+#include "stringutils.h"
 
 #ifdef ANDROID
 namespace {

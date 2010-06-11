@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/host.h"
+#include "host.h"
 
 #ifdef POSIX
 #include <sys/utsname.h>

@@ -29,11 +29,11 @@
 #define TXMPP_ASYNCHTTPREQUEST_H_
 
 #include <string>
-#include "txmpp/event.h"
-#include "txmpp/httpclient.h"
-#include "txmpp/signalthread.h"
-#include "txmpp/socketpool.h"
-#include "txmpp/sslsocketfactory.h"
+#include "event.h"
+#include "httpclient.h"
+#include "signalthread.h"
+#include "socketpool.h"
+#include "sslsocketfactory.h"
 
 namespace txmpp {
 

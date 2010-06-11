@@ -29,7 +29,7 @@
 #define _TXMPP_HELPERS_H_
 
 #include <string>
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

@@ -43,7 +43,7 @@
 #include <cstring>
 #include <string>
 
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // Generic string/memory utilities

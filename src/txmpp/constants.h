@@ -29,8 +29,8 @@
 #define TXMPP_CONSTANTS_H_
 
 #include <string>
-#include "txmpp/qname.h"
-#include "txmpp/jid.h"
+#include "qname.h"
+#include "jid.h"
 
 namespace txmpp {
 

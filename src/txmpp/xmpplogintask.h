@@ -29,10 +29,10 @@
 #define _TXMPP_XMPPLOGINTASLK_H_
 
 #include <string>
-#include "txmpp/jid.h"
-#include "txmpp/logging.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/xmppengine.h"
+#include "jid.h"
+#include "logging.h"
+#include "scoped_ptr.h"
+#include "xmppengine.h"
 
 namespace txmpp {
 

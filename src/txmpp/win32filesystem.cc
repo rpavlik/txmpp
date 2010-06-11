@@ -25,18 +25,18 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32filesystem.h"
+#include "win32filesystem.h"
 
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <shellapi.h>
 #include <shlobj.h>
 #include <tchar.h>
 
-#include "txmpp/fileutils.h"
-#include "txmpp/pathutils.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/stream.h"
-#include "txmpp/stringutils.h"
+#include "fileutils.h"
+#include "pathutils.h"
+#include "scoped_ptr.h"
+#include "stream.h"
+#include "stringutils.h"
 
 // In several places in this file, we test the integrity level of the process
 // before calling GetLongPathName. We do this because calling GetLongPathName

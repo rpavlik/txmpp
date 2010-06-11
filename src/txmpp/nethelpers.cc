@@ -25,10 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/nethelpers.h"
+#include "nethelpers.h"
 
-#include "txmpp/byteorder.h"
-#include "txmpp/signalthread.h"
+#include "byteorder.h"
+#include "signalthread.h"
 
 namespace txmpp {
 

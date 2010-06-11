@@ -29,8 +29,8 @@
 #define _TXMPP_OPENSSLSTREAMADAPTER_H_
 
 #include <string>
-#include "txmpp/sslstreamadapter.h"
-#include "txmpp/opensslidentity.h"
+#include "sslstreamadapter.h"
+#include "opensslidentity.h"
 
 typedef struct ssl_st SSL;
 typedef struct ssl_ctx_st SSL_CTX;

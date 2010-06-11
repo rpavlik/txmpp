@@ -29,8 +29,8 @@
 #define _TXMPP_PROXYINFO_H_
 
 #include <string>
-#include "txmpp/socketaddress.h"
-#include "txmpp/cryptstring.h"
+#include "socketaddress.h"
+#include "cryptstring.h"
 
 namespace txmpp {
 

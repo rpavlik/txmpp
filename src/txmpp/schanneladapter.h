@@ -29,8 +29,8 @@
 #define _TXMPP_SCHANNELADAPTER_H_
 
 #include <string>
-#include "txmpp/ssladapter.h"
-#include "txmpp/messagequeue.h"
+#include "ssladapter.h"
+#include "messagequeue.h"
 
 struct _SecBufferDesc;
 

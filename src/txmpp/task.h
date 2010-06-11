@@ -29,10 +29,10 @@
 #define _TXMPP_TASK_H_
 
 #include <string>
-#include "txmpp/basictypes.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/taskparent.h"
+#include "basictypes.h"
+#include "scoped_ptr.h"
+#include "sigslot.h"
+#include "taskparent.h"
 
 /////////////////////////////////////////////////////////////////////
 //

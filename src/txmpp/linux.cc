@@ -3,14 +3,14 @@
 //
 
 #ifdef LINUX
-#include "txmpp/linux.h"
+#include "linux.h"
 
 #include <errno.h>
 #include <sys/utsname.h>
 
 #include <cstdio>
 
-#include "txmpp/stringencode.h"
+#include "stringencode.h"
 
 namespace txmpp {
 

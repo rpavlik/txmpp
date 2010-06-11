@@ -39,8 +39,8 @@
 #endif  // OSX
 
 #include <algorithm>
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
+#include "common.h"
+#include "logging.h"
 
 //////////////////////////////////////////////////////////////////////
 // Assertions

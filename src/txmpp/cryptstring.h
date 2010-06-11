@@ -31,8 +31,8 @@
 #include <cstring>
 #include <string>
 #include <vector>
-#include "txmpp/linked_ptr.h"
-#include "txmpp/scoped_ptr.h"
+#include "linked_ptr.h"
+#include "scoped_ptr.h"
 
 namespace txmpp {
 

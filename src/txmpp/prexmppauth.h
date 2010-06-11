@@ -28,9 +28,9 @@
 #ifndef _TXMPP_PREXMPPAUTH_H_
 #define _TXMPP_PREXMPPAUTH_H_
 
-#include "txmpp/cryptstring.h"
-#include "txmpp/saslhandler.h"
-#include "txmpp/sigslot.h"
+#include "cryptstring.h"
+#include "saslhandler.h"
+#include "sigslot.h"
 
 namespace txmpp {
 

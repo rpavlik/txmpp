@@ -25,11 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <algorithm>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/common.h"
+#include "basictypes.h"
+#include "common.h"
 
 namespace txmpp {
 

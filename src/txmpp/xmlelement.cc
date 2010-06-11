@@ -30,13 +30,13 @@
 #include <vector>
 #include <sstream>
 
-#include "txmpp/common.h"
-#include "txmpp/xmlelement.h"
-#include "txmpp/qname.h"
-#include "txmpp/xmlparser.h"
-#include "txmpp/xmlbuilder.h"
-#include "txmpp/xmlprinter.h"
-#include "txmpp/xmlconstants.h"
+#include "common.h"
+#include "xmlelement.h"
+#include "qname.h"
+#include "xmlparser.h"
+#include "xmlbuilder.h"
+#include "xmlprinter.h"
+#include "xmlconstants.h"
 
 namespace txmpp {
 

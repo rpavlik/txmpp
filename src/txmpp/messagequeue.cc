@@ -33,10 +33,10 @@
 #include <sys/time.h>
 #endif
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/messagequeue.h"
-#include "txmpp/physicalsocketserver.h"
+#include "common.h"
+#include "logging.h"
+#include "messagequeue.h"
+#include "physicalsocketserver.h"
 
 
 namespace txmpp {

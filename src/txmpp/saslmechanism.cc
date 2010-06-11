@@ -25,10 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/base64.h"
-#include "txmpp/constants.h"
-#include "txmpp/saslmechanism.h"
-#include "txmpp/xmlelement.h"
+#include "base64.h"
+#include "constants.h"
+#include "saslmechanism.h"
+#include "xmlelement.h"
 
 namespace txmpp {
 

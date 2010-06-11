@@ -38,15 +38,15 @@
 #endif  // !WIN32
 #endif
 
-#include "txmpp/ssladapter.h"
+#include "ssladapter.h"
 
 #if SSL_USE_SCHANNEL
 
-#include "txmpp/schanneladapter.h"
+#include "schanneladapter.h"
 
 #elif SSL_USE_OPENSSL  // && !SSL_USE_SCHANNEL
 
-#include "txmpp/openssladapter.h"
+#include "openssladapter.h"
 
 #endif  // SSL_USE_OPENSSL && !SSL_USE_SCHANNEL
 

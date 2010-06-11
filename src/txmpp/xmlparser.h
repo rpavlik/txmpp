@@ -29,7 +29,7 @@
 #define _TXMPP_XMLPARSER_H_
 
 #include <string>
-#include "txmpp/xmlnsstack.h"
+#include "xmlnsstack.h"
 #include <expat.h>
 
 struct XML_ParserStruct;

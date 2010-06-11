@@ -31,9 +31,9 @@
 #include <map>
 #include <string>
 
-#include "txmpp/asyncsocket.h"
-#include "txmpp/cryptstring.h"
-#include "txmpp/logging.h"
+#include "asyncsocket.h"
+#include "cryptstring.h"
+#include "logging.h"
 
 namespace txmpp {
 

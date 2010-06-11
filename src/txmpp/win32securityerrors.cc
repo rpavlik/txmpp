@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32.h"
-#include "txmpp/logging.h"
+#include "win32.h"
+#include "logging.h"
 
 namespace txmpp {
 

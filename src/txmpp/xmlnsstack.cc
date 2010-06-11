@@ -29,9 +29,9 @@
 #include <iostream>
 #include <vector>
 #include <sstream>
-#include "txmpp/xmlelement.h"
-#include "txmpp/xmlnsstack.h"
-#include "txmpp/xmlconstants.h"
+#include "xmlelement.h"
+#include "xmlnsstack.h"
+#include "xmlconstants.h"
 
 namespace txmpp {
 

@@ -31,11 +31,11 @@
 #include <map>
 #include <string>
 #include <vector>
-#include "txmpp/basictypes.h"
-#include "txmpp/common.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/stream.h"
+#include "basictypes.h"
+#include "common.h"
+#include "scoped_ptr.h"
+#include "stringutils.h"
+#include "stream.h"
 
 namespace txmpp {
 

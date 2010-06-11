@@ -33,7 +33,7 @@
 #include <string>
 #include <vector>
 
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

@@ -28,10 +28,10 @@
 #ifndef _TXMPP_SASLCOOKIEMECHANISM_H_
 #define _TXMPP_SASLCOOKIEMECHANISM_H_
 
-#include "txmpp/constants.h"
-#include "txmpp/qname.h"
-#include "txmpp/saslmechanism.h"
-#include "txmpp/xmlelement.h"
+#include "constants.h"
+#include "qname.h"
+#include "saslmechanism.h"
+#include "xmlelement.h"
 
 namespace txmpp {
 

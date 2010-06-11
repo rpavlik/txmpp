@@ -29,12 +29,12 @@
 #define _TXMPP_XMPPCLIENT_H_
 
 #include <string>
-#include "txmpp/base/basicdefs.h"
-#include "txmpp/base/sigslot.h"
-#include "txmpp/xmpp/xmppengine.h"
-#include "txmpp/xmpp/xmppasyncsocket.h"
-#include "txmpp/xmpp/xmppclientsettings.h"
-#include "txmpp/base/task.h"
+#include "basicdefs.h"
+#include "sigslot.h"
+#include "xmppengine.h"
+#include "xmppasyncsocket.h"
+#include "xmppclientsettings.h"
+#include "task.h"
 
 namespace txmpp {
 

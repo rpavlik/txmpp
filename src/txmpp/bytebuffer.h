@@ -30,8 +30,8 @@
 
 #include <string>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/constructormagic.h"
+#include "basictypes.h"
+#include "constructormagic.h"
 
 namespace txmpp {
 

@@ -30,7 +30,7 @@
 
 #include <string>
 // Temporary, until deprecated helpers are removed.
-#include "txmpp/fileutils.h"
+#include "fileutils.h"
 
 namespace txmpp {
 

@@ -41,16 +41,16 @@
 #include <security.h>
 #endif
 
-#include "txmpp/bytebuffer.h"
-#include "txmpp/common.h"
-#include "txmpp/httpcommon.h"
-#include "txmpp/logging.h"
-#include "txmpp/socketadapters.h"
-#include "txmpp/stringencode.h"
-#include "txmpp/stringutils.h"
+#include "bytebuffer.h"
+#include "common.h"
+#include "httpcommon.h"
+#include "logging.h"
+#include "socketadapters.h"
+#include "stringencode.h"
+#include "stringutils.h"
 
 #ifdef WIN32
-#include "txmpp/sec_buffer.h"
+#include "sec_buffer.h"
 #endif  // WIN32
 
 namespace txmpp {

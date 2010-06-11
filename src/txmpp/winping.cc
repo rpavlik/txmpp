@@ -25,11 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/byteorder.h"
-#include "txmpp/common.h"
-#include "txmpp/socketaddress.h"
-#include "txmpp/winping.h"
-#include "txmpp/logging.h"
+#include "byteorder.h"
+#include "common.h"
+#include "socketaddress.h"
+#include "winping.h"
+#include "logging.h"
 #include <cassert>
 
 namespace txmpp {

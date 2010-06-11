@@ -30,8 +30,8 @@
 
 #ifdef WIN32
 
-#include "txmpp/win32.h"
-#include "txmpp/basictypes.h"
+#include "win32.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

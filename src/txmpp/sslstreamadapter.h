@@ -28,8 +28,8 @@
 #ifndef _TXMPP_SSLSTREAMADAPTER_H_
 #define _TXMPP_SSLSTREAMADAPTER_H_
 
-#include "txmpp/stream.h"
-#include "txmpp/sslidentity.h"
+#include "stream.h"
+#include "sslidentity.h"
 
 namespace txmpp {
 

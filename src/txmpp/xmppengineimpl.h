@@ -30,8 +30,8 @@
 
 #include <sstream>
 #include <vector>
-#include "txmpp/xmppengine.h"
-#include "txmpp/xmppstanzaparser.h"
+#include "xmppengine.h"
+#include "xmppstanzaparser.h"
 
 namespace txmpp {
 

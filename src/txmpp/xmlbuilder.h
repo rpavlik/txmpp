@@ -30,8 +30,8 @@
 
 #include <string>
 #include <vector>
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/xmlparser.h"
+#include "scoped_ptr.h"
+#include "xmlparser.h"
 #include <expat.h>
 
 namespace txmpp {

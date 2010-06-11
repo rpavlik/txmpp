@@ -27,12 +27,12 @@
 
 #include <algorithm>
 
-#include "txmpp/taskrunner.h"
+#include "taskrunner.h"
 
-#include "txmpp/common.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/task.h"
-#include "txmpp/logging.h"
+#include "common.h"
+#include "scoped_ptr.h"
+#include "task.h"
+#include "logging.h"
 
 namespace txmpp {
 

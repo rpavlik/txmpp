@@ -29,7 +29,7 @@
 #define _TXMPP_PLAINSASLHANDLER_H_
 
 #include <algorithm>
-#include "txmpp/saslhandler.h"
+#include "saslhandler.h"
 
 namespace txmpp {
 

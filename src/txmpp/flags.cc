@@ -31,11 +31,11 @@
 
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <shellapi.h>
 #endif
 
-#include "txmpp/flags.h"
+#include "flags.h"
 
 
 // -----------------------------------------------------------------------------

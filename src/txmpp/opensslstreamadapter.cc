@@ -31,7 +31,7 @@
 
 #if HAVE_OPENSSL_SSL_H
 
-#include "txmpp/opensslstreamadapter.h"
+#include "opensslstreamadapter.h"
 
 #include <openssl/bio.h>
 #include <openssl/crypto.h>
@@ -40,12 +40,12 @@
 #include <openssl/ssl.h>
 #include <openssl/x509v3.h>
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/stream.h"
-#include "txmpp/openssladapter.h"
-#include "txmpp/opensslidentity.h"
-#include "txmpp/stringutils.h"
+#include "common.h"
+#include "logging.h"
+#include "stream.h"
+#include "openssladapter.h"
+#include "opensslidentity.h"
+#include "stringutils.h"
 
 namespace txmpp {
 

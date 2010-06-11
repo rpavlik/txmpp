@@ -34,13 +34,13 @@
 #include <queue>
 #include <vector>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/criticalsection.h"
-#include "txmpp/messagehandler.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/socketserver.h"
-#include "txmpp/time.h"
+#include "basictypes.h"
+#include "criticalsection.h"
+#include "messagehandler.h"
+#include "scoped_ptr.h"
+#include "sigslot.h"
+#include "socketserver.h"
+#include "time.h"
 
 namespace txmpp {
 

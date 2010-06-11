@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/opensslidentity.h"
+#include "opensslidentity.h"
 
 #include <openssl/ssl.h>
 #include <openssl/bio.h>
@@ -35,8 +35,8 @@
 #include <openssl/rsa.h>
 #include <openssl/crypto.h>
 
-#include "txmpp/logging.h"
-#include "txmpp/helpers.h"
+#include "logging.h"
+#include "helpers.h"
 
 namespace txmpp {
 

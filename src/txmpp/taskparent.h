@@ -30,8 +30,8 @@
 
 #include <set>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/scoped_ptr.h"
+#include "basictypes.h"
+#include "scoped_ptr.h"
 
 namespace txmpp {
 

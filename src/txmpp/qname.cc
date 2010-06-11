@@ -26,10 +26,10 @@
  */
 
 #include <string>
-#include "txmpp/common.h"
-#include "txmpp/xmlelement.h"
-#include "txmpp/qname.h"
-#include "txmpp/xmlconstants.h"
+#include "common.h"
+#include "xmlelement.h"
+#include "qname.h"
+#include "xmlconstants.h"
 
 namespace txmpp {
 

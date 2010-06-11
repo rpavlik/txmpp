@@ -36,16 +36,16 @@
 #include <security.h>
 #endif
 
-#include "txmpp/httpcommon-inl.h"
+#include "httpcommon-inl.h"
 
-#include "txmpp/base64.h"
-#include "txmpp/common.h"
-#include "txmpp/cryptstring.h"
-#include "txmpp/httpcommon.h"
-#include "txmpp/socketaddress.h"
-#include "txmpp/stringdigest.h"
-#include "txmpp/stringencode.h"
-#include "txmpp/stringutils.h"
+#include "base64.h"
+#include "common.h"
+#include "cryptstring.h"
+#include "httpcommon.h"
+#include "socketaddress.h"
+#include "stringdigest.h"
+#include "stringencode.h"
+#include "stringutils.h"
 
 namespace txmpp {
 

@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/task.h"
-#include "txmpp/common.h"
-#include "txmpp/taskrunner.h"
+#include "task.h"
+#include "common.h"
+#include "taskrunner.h"
 
 namespace txmpp {
 

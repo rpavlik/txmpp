@@ -29,17 +29,17 @@
 #include <time.h>
 #endif
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/thread.h"
-#include "txmpp/time.h"
+#include "common.h"
+#include "logging.h"
+#include "thread.h"
+#include "time.h"
 
 #if defined(OSX_USE_COCOA)
 #ifndef OSX
 #error OSX_USE_COCOA is defined but not OSX
 #endif
-#include "txmpp/maccocoathreadhelper.h"
-#include "txmpp/scoped_autorelease_pool.h"
+#include "maccocoathreadhelper.h"
+#include "scoped_autorelease_pool.h"
 #endif
 
 #define MSDEV_SET_THREAD_NAME  0x406D1388

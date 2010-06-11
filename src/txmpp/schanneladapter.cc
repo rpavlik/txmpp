@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32.h"
+#include "win32.h"
 #define SECURITY_WIN32
 #include <security.h>
 #include <schannel.h>
@@ -33,11 +33,11 @@
 #include <iomanip>
 #include <vector>
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/schanneladapter.h"
-#include "txmpp/sec_buffer.h"
-#include "txmpp/thread.h"
+#include "common.h"
+#include "logging.h"
+#include "schanneladapter.h"
+#include "sec_buffer.h"
+#include "thread.h"
 
 namespace txmpp {
 

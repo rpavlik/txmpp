@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32socketinit.h"
+#include "win32socketinit.h"
 
-#include "txmpp/win32.h"
+#include "win32.h"
 
 namespace txmpp {
 

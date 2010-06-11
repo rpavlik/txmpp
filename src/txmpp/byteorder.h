@@ -36,7 +36,7 @@
 #include <winsock2.h>
 #endif
 
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

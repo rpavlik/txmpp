@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/proxyinfo.h"
+#include "proxyinfo.h"
 
 namespace txmpp {
 

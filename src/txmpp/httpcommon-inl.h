@@ -28,8 +28,8 @@
 #ifndef _TXMPP_HTTPCOMMON_INL_H_
 #define _TXMPP_HTTPCOMMON_INL_H_
 
-#include "txmpp/common.h"
-#include "txmpp/httpcommon.h"
+#include "common.h"
+#include "httpcommon.h"
 
 namespace txmpp {
 

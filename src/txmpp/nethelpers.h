@@ -37,9 +37,9 @@
 
 #include <list>
 
-#include "txmpp/signalthread.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/socketaddress.h"
+#include "signalthread.h"
+#include "sigslot.h"
+#include "socketaddress.h"
 
 namespace txmpp {
 

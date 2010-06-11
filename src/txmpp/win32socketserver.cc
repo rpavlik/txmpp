@@ -25,12 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/win32socketserver.h"
-#include "txmpp/byteorder.h"
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/winping.h"
-#include "txmpp/win32window.h"
+#include "win32socketserver.h"
+#include "byteorder.h"
+#include "common.h"
+#include "logging.h"
+#include "winping.h"
+#include "win32window.h"
 #include <ws2tcpip.h>  // NOLINT
 
 namespace txmpp {

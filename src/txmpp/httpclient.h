@@ -28,13 +28,13 @@
 #ifndef _TXMPP_HTTPCLIENT_H__
 #define _TXMPP_HTTPCLIENT_H__
 
-#include "txmpp/common.h"
-#include "txmpp/httpbase.h"
-#include "txmpp/proxyinfo.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/socketaddress.h"
-#include "txmpp/socketpool.h"
+#include "common.h"
+#include "httpbase.h"
+#include "proxyinfo.h"
+#include "scoped_ptr.h"
+#include "sigslot.h"
+#include "socketaddress.h"
+#include "socketpool.h"
 
 namespace txmpp {
 

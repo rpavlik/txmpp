@@ -31,7 +31,7 @@
 #include <string>
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #else
 #include <sys/types.h>
 #include <dirent.h>
@@ -39,9 +39,9 @@
 #include <unistd.h>
 #endif
 
-#include "txmpp/basictypes.h"
-#include "txmpp/common.h"
-#include "txmpp/scoped_ptr.h"
+#include "basictypes.h"
+#include "common.h"
+#include "scoped_ptr.h"
 
 namespace txmpp {
 

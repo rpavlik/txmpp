@@ -25,16 +25,16 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmpp/jid.h"
+#include "jid.h"
 
 #include <ctype.h>
 
 #include <algorithm>
 #include <string>
 
-#include "txmpp/base/common.h"
-#include "txmpp/base/logging.h"
-#include "txmpp/xmpp/constants.h"
+#include "common.h"
+#include "logging.h"
+#include "constants.h"
 
 namespace txmpp {
 

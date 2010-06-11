@@ -29,14 +29,14 @@
 #define _TXMPP_EVENT_H_
 
 #if defined(WIN32)
-#include "txmpp/win32.h"  // NOLINT: consider this a system header.
+#include "win32.h"  // NOLINT: consider this a system header.
 #elif defined(POSIX)
 #include <pthread.h>
 #else
 #error "Must define either WIN32 or POSIX."
 #endif
 
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

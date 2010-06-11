@@ -28,8 +28,8 @@
 #ifndef _TXMPP_SSLSOCKETFACTORY_H_
 #define _TXMPP_SSLSOCKETFACTORY_H_
 
-#include "txmpp/proxyinfo.h"
-#include "txmpp/socketserver.h"
+#include "proxyinfo.h"
+#include "socketserver.h"
 
 namespace txmpp {
 

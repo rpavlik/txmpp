@@ -32,7 +32,7 @@
 #include_next <time.h>
 #endif
 
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

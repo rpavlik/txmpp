@@ -29,14 +29,14 @@
 #define _TXMPP_WIN32SOCKETSERVER_H_
 
 #ifdef WIN32
-#include "txmpp/asyncsocket.h"
-#include "txmpp/criticalsection.h"
-#include "txmpp/messagequeue.h"
-#include "txmpp/socketserver.h"
-#include "txmpp/socketfactory.h"
-#include "txmpp/socket.h"
-#include "txmpp/thread.h"
-#include "txmpp/win32window.h"
+#include "asyncsocket.h"
+#include "criticalsection.h"
+#include "messagequeue.h"
+#include "socketserver.h"
+#include "socketfactory.h"
+#include "socket.h"
+#include "thread.h"
+#include "win32window.h"
 
 namespace txmpp {
 

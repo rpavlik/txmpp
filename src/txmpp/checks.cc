@@ -29,8 +29,8 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-#include "txmpp/checks.h"
-#include "txmpp/logging.h"
+#include "checks.h"
+#include "logging.h"
 
 void Fatal(const char* file, int line, const char* format, ...) {
   char msg[256];

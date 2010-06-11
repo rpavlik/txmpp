@@ -30,9 +30,9 @@
 
 #include <string>
 #include <deque>
-#include "txmpp/base/sigslot.h"
-#include "txmpp/xmpp/xmppengine.h"
-#include "txmpp/base/task.h"
+#include "sigslot.h"
+#include "xmppengine.h"
+#include "task.h"
 
 namespace txmpp {
 

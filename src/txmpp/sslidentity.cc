@@ -42,7 +42,7 @@
 #endif  // !WIN32
 #endif
 
-#include "txmpp/sslidentity.h"
+#include "sslidentity.h"
 
 #if SSL_USE_SCHANNEL
 
@@ -50,7 +50,7 @@
 
 #elif SSL_USE_OPENSSL  // && !SSL_USE_SCHANNEL
 
-#include "txmpp/opensslidentity.h"
+#include "opensslidentity.h"
 
 namespace txmpp {
 

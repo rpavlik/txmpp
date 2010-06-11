@@ -28,8 +28,8 @@
 #ifndef _TXMPP_XMPPCLIENTSETTINGS_H_
 #define _TXMPP_XMPPCLIENTSETTINGS_H_
 
-#include "txmpp/cryptstring.h"
-#include "txmpp/proxyinfo.h"
+#include "cryptstring.h"
+#include "proxyinfo.h"
 
 namespace txmpp {
 

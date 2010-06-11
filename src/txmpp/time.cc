@@ -34,8 +34,8 @@
 #include <windows.h>
 #endif
 
-#include "txmpp/common.h"
-#include "txmpp/time.h"
+#include "common.h"
+#include "time.h"
 
 #define EFFICIENT_IMPLEMENTATION 1
 

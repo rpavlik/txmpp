@@ -28,9 +28,9 @@
 #ifndef _TXMPP_SOCKET_STREAM_H_
 #define _TXMPP_SOCKET_STREAM_H_
 
-#include "txmpp/asyncsocket.h"
-#include "txmpp/common.h"
-#include "txmpp/stream.h"
+#include "asyncsocket.h"
+#include "common.h"
+#include "stream.h"
 
 namespace txmpp {
 

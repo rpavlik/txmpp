@@ -30,9 +30,9 @@
 
 #include <vector>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/taskparent.h"
+#include "basictypes.h"
+#include "sigslot.h"
+#include "taskparent.h"
 
 namespace txmpp {
 class Task;

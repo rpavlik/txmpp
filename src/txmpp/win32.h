@@ -49,8 +49,8 @@ typedef struct _TOKEN_MANDATORY_LABEL {
 
 #include <string>
 
-#include "txmpp/base/stringutils.h"
-#include "txmpp/base/basictypes.h"
+#include "stringutils.h"
+#include "basictypes.h"
 
 namespace txmpp {
 

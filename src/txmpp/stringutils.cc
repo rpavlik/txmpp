@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/stringutils.h"
-#include "txmpp/common.h"
+#include "stringutils.h"
+#include "common.h"
 
 namespace txmpp {
 

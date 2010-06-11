@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/signalthread.h"
+#include "signalthread.h"
 
-#include "txmpp/common.h"
+#include "common.h"
 
 namespace txmpp {
 

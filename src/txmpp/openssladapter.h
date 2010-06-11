@@ -29,7 +29,7 @@
 #define _TXMPP_OPENSSLADAPTER_H_
 
 #include <string>
-#include "txmpp/ssladapter.h"
+#include "ssladapter.h"
 
 typedef struct ssl_st SSL;
 typedef struct ssl_ctx_st SSL_CTX;

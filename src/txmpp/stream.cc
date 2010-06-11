@@ -32,16 +32,16 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <string>
-#include "txmpp/basictypes.h"
-#include "txmpp/common.h"
-#include "txmpp/messagequeue.h"
-#include "txmpp/stream.h"
-#include "txmpp/stringencode.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/thread.h"
+#include "basictypes.h"
+#include "common.h"
+#include "messagequeue.h"
+#include "stream.h"
+#include "stringencode.h"
+#include "stringutils.h"
+#include "thread.h"
 
 #ifdef WIN32
-#include "txmpp/base/win32.h"
+#include "win32.h"
 #define fileno _fileno
 #endif
 

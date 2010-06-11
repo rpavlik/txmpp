@@ -31,7 +31,7 @@
 #include <string>
 #include <vector>
 #include <iosfwd>
-#include "txmpp/basictypes.h"
+#include "basictypes.h"
 #undef SetPort
 
 struct sockaddr_in;

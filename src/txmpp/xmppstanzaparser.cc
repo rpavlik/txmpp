@@ -25,10 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmlelement.h"
-#include "txmpp/common.h"
-#include "txmpp/xmppstanzaparser.h"
-#include "txmpp/constants.h"
+#include "xmlelement.h"
+#include "common.h"
+#include "xmppstanzaparser.h"
+#include "constants.h"
 #include <expat.h>
 
 namespace txmpp {

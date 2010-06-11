@@ -39,8 +39,8 @@
 
 #include <assert.h>
 
-#include "txmpp/checks.h"
-#include "txmpp/common.h"
+#include "checks.h"
+#include "common.h"
 
 // Internal use only.
 union FlagValue {

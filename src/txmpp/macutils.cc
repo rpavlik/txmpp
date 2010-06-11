@@ -27,11 +27,11 @@
 
 #include <sstream>
 
-#include "txmpp/common.h"
-#include "txmpp/logging.h"
-#include "txmpp/macutils.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/stringutils.h"
+#include "common.h"
+#include "logging.h"
+#include "macutils.h"
+#include "scoped_ptr.h"
+#include "stringutils.h"
 
 namespace txmpp {
 

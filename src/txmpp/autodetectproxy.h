@@ -30,9 +30,9 @@
 
 #include <string>
 
-#include "txmpp/cryptstring.h"
-#include "txmpp/proxyinfo.h"
-#include "txmpp/signalthread.h"
+#include "cryptstring.h"
+#include "proxyinfo.h"
+#include "signalthread.h"
 
 namespace txmpp {
 

@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/messagehandler.h"
-#include "txmpp/messagequeue.h"
+#include "messagehandler.h"
+#include "messagequeue.h"
 
 namespace txmpp {
 

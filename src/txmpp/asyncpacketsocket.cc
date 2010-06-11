@@ -29,7 +29,7 @@
 #pragma warning(disable:4786)
 #endif
 
-#include "txmpp/base/asyncpacketsocket.h"
+#include "asyncpacketsocket.h"
 
 namespace txmpp {
 

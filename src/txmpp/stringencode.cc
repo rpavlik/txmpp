@@ -25,14 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/stringencode.h"
+#include "stringencode.h"
 
 #include <cstdio>
 #include <cstdlib>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/common.h"
-#include "txmpp/stringutils.h"
+#include "basictypes.h"
+#include "common.h"
+#include "stringutils.h"
 
 namespace txmpp {
 

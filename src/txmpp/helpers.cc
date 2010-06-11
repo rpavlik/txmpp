@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/helpers.h"
+#include "helpers.h"
 
 #ifdef WIN32
 #define WIN32_LEAN_AND_MEAN
@@ -35,10 +35,10 @@
 #include <openssl/rand.h>
 #endif
 
-#include "txmpp/base64.h"
-#include "txmpp/logging.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/time.h"
+#include "base64.h"
+#include "logging.h"
+#include "scoped_ptr.h"
+#include "time.h"
 
 namespace txmpp {
 

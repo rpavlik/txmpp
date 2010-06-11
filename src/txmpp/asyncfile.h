@@ -28,7 +28,7 @@
 #ifndef TXMPP_ASYNCFILE_H_
 #define TXMPP_ASYNCFILE_H_
 
-#include "txmpp/sigslot.h"
+#include "sigslot.h"
 
 namespace txmpp {
 

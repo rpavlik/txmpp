@@ -29,8 +29,8 @@
 #define _TXMPP_FIREWALLSOCKETSERVER_H_
 
 #include <vector>
-#include "txmpp/socketserver.h"
-#include "txmpp/criticalsection.h"
+#include "socketserver.h"
+#include "criticalsection.h"
 
 namespace txmpp {
 

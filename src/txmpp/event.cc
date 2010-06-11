@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/event.h"
+#include "event.h"
 
 #if defined(WIN32)
 #include <windows.h>

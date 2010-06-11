@@ -30,9 +30,9 @@
 
 #include <deque>
 #include <list>
-#include "txmpp/logging.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/socketaddress.h"
+#include "logging.h"
+#include "sigslot.h"
+#include "socketaddress.h"
 
 namespace txmpp {
 

@@ -28,8 +28,8 @@
 #ifndef _TXMPP_XMPPSTANZAPARSER_H_
 #define _TXMPP_XMPPSTANZAPARSER_H_
 
-#include "txmpp/xmlbuilder.h"
-#include "txmpp/xmlparser.h"
+#include "xmlbuilder.h"
+#include "xmlparser.h"
 
 namespace txmpp {
 

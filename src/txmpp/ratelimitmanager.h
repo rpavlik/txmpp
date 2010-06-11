@@ -29,8 +29,8 @@
 #define _TXMPP_RATELIMITMANAGER_H_
 
 #include <map>
-#include "txmpp/taskrunner.h"
-#include "txmpp/time.h"
+#include "taskrunner.h"
+#include "time.h"
 
 namespace txmpp {
 

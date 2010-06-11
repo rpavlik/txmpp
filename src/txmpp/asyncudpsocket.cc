@@ -29,8 +29,8 @@
 #pragma warning(disable:4786)
 #endif
 
-#include "txmpp/base/asyncudpsocket.h"
-#include "txmpp/base/logging.h"
+#include "asyncudpsocket.h"
+#include "logging.h"
 
 namespace txmpp {
 

@@ -30,9 +30,9 @@
 
 #include <vector>
 
-#include "txmpp/asyncfile.h"
-#include "txmpp/socketserver.h"
-#include "txmpp/criticalsection.h"
+#include "asyncfile.h"
+#include "socketserver.h"
+#include "criticalsection.h"
 
 #ifdef POSIX
 typedef int SOCKET;

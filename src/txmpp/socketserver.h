@@ -28,7 +28,7 @@
 #ifndef _TXMPP_SOCKETSERVER_H_
 #define _TXMPP_SOCKETSERVER_H_
 
-#include "txmpp/socketfactory.h"
+#include "socketfactory.h"
 
 namespace txmpp {
 

@@ -25,16 +25,16 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmllite/xmlparser.h"
+#include "xmlparser.h"
 
 #include <string>
 #include <vector>
 #include <iostream>
-#include "txmpp/base/common.h"
-#include "txmpp/xmllite/xmlelement.h"
-#include "txmpp/xmllite/xmlnsstack.h"
-#include "txmpp/xmllite/xmlconstants.h"
-#include "txmpp/xmllite/xmlnsstack.h"
+#include "common.h"
+#include "xmlelement.h"
+#include "xmlnsstack.h"
+#include "xmlconstants.h"
+#include "xmlnsstack.h"
 #include <expat.h>
 
 namespace txmpp {

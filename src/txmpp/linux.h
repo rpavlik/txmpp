@@ -8,7 +8,7 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "txmpp/stream.h"
+#include "stream.h"
 
 namespace txmpp {
 

@@ -25,10 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/proxydetect.h"
+#include "proxydetect.h"
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <shlobj.h>
 #endif  // WIN32
 
@@ -46,11 +46,11 @@
 
 #include <map>
 
-#include "txmpp/fileutils.h"
-#include "txmpp/httpcommon.h"
-#include "txmpp/httpcommon-inl.h"
-#include "txmpp/pathutils.h"
-#include "txmpp/stringutils.h"
+#include "fileutils.h"
+#include "httpcommon.h"
+#include "httpcommon-inl.h"
+#include "pathutils.h"
+#include "stringutils.h"
 
 #ifdef WIN32
 #define _TRY_WINHTTP 1

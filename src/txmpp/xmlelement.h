@@ -30,8 +30,8 @@
 
 #include <iosfwd>
 #include <string>
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/qname.h"
+#include "scoped_ptr.h"
+#include "qname.h"
 
 namespace txmpp {
 

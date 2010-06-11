@@ -69,8 +69,8 @@
 #include <sstream>
 #include <string>
 #include <utility>
-#include "txmpp/base/basictypes.h"
-#include "txmpp/base/criticalsection.h"
+#include "basictypes.h"
+#include "criticalsection.h"
 
 namespace txmpp {
 

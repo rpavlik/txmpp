@@ -27,12 +27,12 @@
 
 #include <iomanip>
 
-#include "txmpp/asyncsocket.h"
-#include "txmpp/logging.h"
-#include "txmpp/socketfactory.h"
-#include "txmpp/socketpool.h"
-#include "txmpp/socketstream.h"
-#include "txmpp/thread.h"
+#include "asyncsocket.h"
+#include "logging.h"
+#include "socketfactory.h"
+#include "socketpool.h"
+#include "socketstream.h"
+#include "thread.h"
 
 namespace txmpp {
 

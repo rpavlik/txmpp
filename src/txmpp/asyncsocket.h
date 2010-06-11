@@ -28,9 +28,9 @@
 #ifndef TXMPP_ASYNCSOCKET_H_
 #define TXMPP_ASYNCSOCKET_H_
 
-#include "txmpp/common.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/socket.h"
+#include "common.h"
+#include "sigslot.h"
+#include "socket.h"
 
 namespace txmpp {
 

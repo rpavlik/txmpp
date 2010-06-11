@@ -28,7 +28,7 @@
 #ifndef _TXMPP_UNIXFILESYSTEM_H_
 #define _TXMPP_UNIXFILESYSTEM_H_
 
-#include "txmpp/fileutils.h"
+#include "fileutils.h"
 
 namespace txmpp {
 

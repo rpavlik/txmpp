@@ -29,8 +29,8 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 
-#include "txmpp/logging.h"
-#include "txmpp/macconversion.h"
+#include "logging.h"
+#include "macconversion.h"
 
 bool p_convertHostCFStringRefToCPPString(
   const CFStringRef cfstr, std::string& cppstr) {

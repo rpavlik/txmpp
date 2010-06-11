@@ -32,7 +32,7 @@
 #ifndef _TXMPP_HTTPBASE_H_
 #define _TXMPP_HTTPBASE_H_
 
-#include "txmpp/httpcommon.h"
+#include "httpcommon.h"
 
 namespace txmpp {
 

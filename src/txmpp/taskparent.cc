@@ -27,10 +27,10 @@
 
 #include <algorithm>
 
-#include "txmpp/taskparent.h"
+#include "taskparent.h"
 
-#include "txmpp/task.h"
-#include "txmpp/taskrunner.h"
+#include "task.h"
+#include "taskrunner.h"
 
 namespace txmpp {
 

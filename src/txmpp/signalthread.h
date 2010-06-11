@@ -28,8 +28,8 @@
 #ifndef _TXMPP_SIGNALTHREAD_H_
 #define _TXMPP_SIGNALTHREAD_H_
 
-#include "txmpp/thread.h"
-#include "txmpp/sigslot.h"
+#include "thread.h"
+#include "sigslot.h"
 
 namespace txmpp {
 

@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/base/autodetectproxy.h"
-#include "txmpp/base/httpcommon.h"
-#include "txmpp/base/proxydetect.h"
+#include "autodetectproxy.h"
+#include "httpcommon.h"
+#include "proxydetect.h"
 
 namespace txmpp {
 

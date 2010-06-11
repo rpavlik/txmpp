@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/winfirewall.h"
+#include "winfirewall.h"
 
-#include "txmpp/win32.h"
+#include "win32.h"
 
 #include <comdef.h>
 #include <netfw.h>

@@ -25,11 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmpptask.h"
-#include "txmpp/xmppclient.h"
-#include "txmpp/xmppengine.h"
-#include "txmpp/constants.h"
-#include "txmpp/ratelimitmanager.h"
+#include "xmpptask.h"
+#include "xmppclient.h"
+#include "xmppengine.h"
+#include "constants.h"
+#include "ratelimitmanager.h"
 
 namespace txmpp {
 

@@ -28,7 +28,7 @@
 #ifndef _TXMPP_XMPPASYNCSOCKET_H_
 #define _TXMPP_XMPPASYNCSOCKET_H_
 
-#include "txmpp/sigslot.h"
+#include "sigslot.h"
 
 namespace txmpp {
 

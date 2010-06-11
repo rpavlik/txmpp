@@ -14,8 +14,8 @@
 //*
 //*********************************************************************
 
-#include "txmpp/base64.h"
-#include "txmpp/common.h"
+#include "base64.h"
+#include "common.h"
 
 using std::string;
 using std::vector;

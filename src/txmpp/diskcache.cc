@@ -28,16 +28,16 @@
 #include <time.h>
 
 #ifdef WIN32
-#include "txmpp/base/win32.h"
+#include "win32.h"
 #endif
 
-#include "txmpp/base/common.h"
-#include "txmpp/base/diskcache.h"
-#include "txmpp/base/fileutils.h"
-#include "txmpp/base/pathutils.h"
-#include "txmpp/base/stream.h"
-#include "txmpp/base/stringencode.h"
-#include "txmpp/base/stringutils.h"
+#include "common.h"
+#include "diskcache.h"
+#include "fileutils.h"
+#include "pathutils.h"
+#include "stream.h"
+#include "stringencode.h"
+#include "stringutils.h"
 
 #ifdef _DEBUG
 #define TRANSPARENT_CACHE_NAMES 1

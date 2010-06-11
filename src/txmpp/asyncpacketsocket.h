@@ -28,7 +28,7 @@
 #ifndef TXMPP_ASYNCPACKETSOCKET_H_
 #define TXMPP_ASYNCPACKETSOCKET_H_
 
-#include "txmpp/asyncsocket.h"
+#include "asyncsocket.h"
 
 namespace txmpp {
 

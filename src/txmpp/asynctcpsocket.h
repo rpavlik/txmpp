@@ -28,8 +28,8 @@
 #ifndef TXMPP_ASYNCTCPSOCKET_H_
 #define TXMPP_ASYNCTCPSOCKET_H_
 
-#include "txmpp/asyncpacketsocket.h"
-#include "txmpp/socketfactory.h"
+#include "asyncpacketsocket.h"
+#include "socketfactory.h"
 
 namespace txmpp {
 

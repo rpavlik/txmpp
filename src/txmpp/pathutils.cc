@@ -26,18 +26,18 @@
  */
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #include <shellapi.h>
 #include <shlobj.h>
 #include <tchar.h>
 #endif  // WIN32
 
-#include "txmpp/common.h"
-#include "txmpp/fileutils.h"
-#include "txmpp/logging.h"
-#include "txmpp/pathutils.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/urlencode.h"
+#include "common.h"
+#include "fileutils.h"
+#include "logging.h"
+#include "pathutils.h"
+#include "stringutils.h"
+#include "urlencode.h"
 
 namespace txmpp {
 

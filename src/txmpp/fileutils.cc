@@ -28,16 +28,16 @@
 #include <cassert>
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #endif
 
-#include "txmpp/pathutils.h"
-#include "txmpp/fileutils.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/stream.h"
+#include "pathutils.h"
+#include "fileutils.h"
+#include "stringutils.h"
+#include "stream.h"
 
-#include "txmpp/unixfilesystem.h"
-#include "txmpp/win32filesystem.h"
+#include "unixfilesystem.h"
+#include "win32filesystem.h"
 
 #ifndef WIN32
 #define MAX_PATH 260

@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/asynchttprequest.h"
+#include "asynchttprequest.h"
 
 namespace txmpp {
 

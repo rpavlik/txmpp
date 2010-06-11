@@ -27,18 +27,18 @@
 
 #include <time.h>
 
-#include "txmpp/httpcommon-inl.h"
+#include "httpcommon-inl.h"
 
-#include "txmpp/asyncsocket.h"
-#include "txmpp/common.h"
-#include "txmpp/diskcache.h"
-#include "txmpp/httpclient.h"
-#include "txmpp/logging.h"
-#include "txmpp/pathutils.h"
-#include "txmpp/socketstream.h"
-#include "txmpp/stringencode.h"
-#include "txmpp/stringutils.h"
-#include "txmpp/thread.h"
+#include "asyncsocket.h"
+#include "common.h"
+#include "diskcache.h"
+#include "httpclient.h"
+#include "logging.h"
+#include "pathutils.h"
+#include "socketstream.h"
+#include "stringencode.h"
+#include "stringutils.h"
+#include "thread.h"
 
 namespace txmpp {
 

@@ -36,10 +36,10 @@
 #include <pthread.h>
 #endif
 
-#include "txmpp/messagequeue.h"
+#include "messagequeue.h"
 
 #ifdef WIN32
-#include "txmpp/win32.h"
+#include "win32.h"
 #endif
 
 namespace txmpp {

@@ -29,9 +29,9 @@
 #define _TXMPP_XMPPENGINE_H_
 
 // also part of the API
-#include "txmpp/jid.h"
-#include "txmpp/qname.h"
-#include "txmpp/xmlelement.h"
+#include "jid.h"
+#include "qname.h"
+#include "xmlelement.h"
 
 namespace txmpp {
 

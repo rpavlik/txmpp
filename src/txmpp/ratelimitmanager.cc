@@ -25,7 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmpp/ratelimitmanager.h"
+#include "xmpp/ratelimitmanager.h"
 
 #include <list>
 #include <string>

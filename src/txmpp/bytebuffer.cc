@@ -25,14 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/bytebuffer.h"
+#include "bytebuffer.h"
 
 #include <algorithm>
 #include <cassert>
 #include <cstring>
 
-#include "txmpp/basictypes.h"
-#include "txmpp/byteorder.h"
+#include "basictypes.h"
+#include "byteorder.h"
 
 #if defined(_MSC_VER) && _MSC_VER < 1300
 namespace std {

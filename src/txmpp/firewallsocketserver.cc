@@ -25,13 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/firewallsocketserver.h"
+#include "firewallsocketserver.h"
 
 #include <cassert>
 #include <algorithm>
 
-#include "txmpp/asyncsocket.h"
-#include "txmpp/logging.h"
+#include "asyncsocket.h"
+#include "logging.h"
 
 namespace txmpp {
 

@@ -33,9 +33,9 @@
 
 #include <string>
 
-#include "txmpp/common.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/sslidentity.h"
+#include "common.h"
+#include "scoped_ptr.h"
+#include "sslidentity.h"
 
 typedef struct ssl_ctx_st SSL_CTX;
 

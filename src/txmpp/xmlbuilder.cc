@@ -27,9 +27,9 @@
 
 #include <vector>
 #include <set>
-#include "txmpp/common.h"
-#include "txmpp/xmlelement.h"
-#include "txmpp/xmlbuilder.h"
+#include "common.h"
+#include "xmlelement.h"
+#include "xmlbuilder.h"
 #include <expat.h>
 
 namespace txmpp {

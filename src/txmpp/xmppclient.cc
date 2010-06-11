@@ -25,14 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/xmppclient.h"
-#include "txmpp/xmpptask.h"
-#include "txmpp/constants.h"
-#include "txmpp/sigslot.h"
-#include "txmpp/saslplainmechanism.h"
-#include "txmpp/prexmppauth.h"
-#include "txmpp/scoped_ptr.h"
-#include "txmpp/plainsaslhandler.h"
+#include "xmppclient.h"
+#include "xmpptask.h"
+#include "constants.h"
+#include "sigslot.h"
+#include "saslplainmechanism.h"
+#include "prexmppauth.h"
+#include "scoped_ptr.h"
+#include "plainsaslhandler.h"
 
 namespace txmpp {
 

@@ -32,7 +32,7 @@
 #include "config.h"
 #endif
 
-#include "txmpp/constructormagic.h"
+#include "constructormagic.h"
 
 #ifndef INT_TYPES_DEFINED
 #define INT_TYPES_DEFINED

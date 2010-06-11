@@ -25,14 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "txmpp/constants.h"
+#include "constants.h"
 
 #include <string>
-#include "txmpp/basicdefs.h"
-#include "txmpp/jid.h"
-#include "txmpp/qname.h"
-#include "txmpp/xmlconstants.h"
-#include "txmpp/xmlelement.h"
+#include "basicdefs.h"
+#include "jid.h"
+#include "qname.h"
+#include "xmlconstants.h"
+#include "xmlelement.h"
 
 namespace txmpp {
 
