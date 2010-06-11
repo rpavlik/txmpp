@@ -76,6 +76,6 @@ inline int32 TimeUntil(uint32 later) {
   return TimeDiff(later, Time());
 }
 
-} // namespace txmpp
+}  // namespace txmpp
 
-#endif // _TXMPP_TIME_H_
+#endif  // _TXMPP_TIME_H_

@@ -1,8 +1,10 @@
 #include "xmpppump.h"
 
-#include <txmpp/base/logging.h>
+#include "../../logging.h"
 #include "xmppauth.h"
 #include "xmpptasks.h"
+
+namespace hello {
 
 XmppPump::XmppPump(XmppPumpNotify * notify) {
   state_ = txmpp::XmppEngine::STATE_NONE;
@@ -70,3 +72,5 @@ txmpp::XmppReturnStatus XmppPump::SendStanza(const txmpp::XmlElement *stanza) {
     return client_->SendStanza(stanza);
   return txmpp::XMPP_RETURN_BADSTATE;
 }
+
+}  // namespace hello

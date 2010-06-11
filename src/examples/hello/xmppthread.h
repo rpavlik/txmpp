@@ -1,10 +1,12 @@
-#ifndef _XMPPTHREAD_H_
-#define _XMPPTHREAD_H_
+#ifndef _HELLO_XMPPTHREAD_H_
+#define _HELLO_XMPPTHREAD_H_
 
-#include <txmpp/base/thread.h>
-#include <txmpp/xmpp/xmppclientsettings.h>
+#include "../../thread.h"
+#include "../../xmppclientsettings.h"
 #include "xmpppump.h"
 #include "xmppsocket.h"
+
+namespace hello {
 
 class XmppThread: public txmpp::Thread, XmppPumpNotify, txmpp::MessageHandler {
   public:
@@ -25,4 +27,6 @@ class XmppThread: public txmpp::Thread, XmppPumpNotify, txmpp::MessageHandler {
     void OnMessage(txmpp::Message* pmsg);
 };
 
-#endif  // _XMPPTHREAD_H_
+}  // namespace hello
+
+#endif  // _HELLO_XMPPTHREAD_H_

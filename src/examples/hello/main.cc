@@ -1,7 +1,7 @@
 #include <iostream>
-#include <txmpp/base/cryptstring.h>
-#include <txmpp/base/logging.h>
-#include <txmpp/xmpp/xmppclientsettings.h>
+#include "../../cryptstring.h"
+#include "../../logging.h"
+#include "../../xmppclientsettings.h"
 #include "xmppthread.h"
 
 int main(int argc, char* argv[]) {
@@ -16,7 +16,7 @@ int main(int argc, char* argv[]) {
   while (reconnect) {
 
     // Start xmpp on a different thread
-    XmppThread thread;
+    hello::XmppThread thread;
     thread.Start();
 
     // Create client settings

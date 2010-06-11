@@ -1,9 +1,11 @@
 #include <iostream>
 #include <sstream>
-#include <txmpp/xmpp/xmppclient.h>
-#include <txmpp/xmpp/constants.h>
-#include <txmpp/base/logging.h>
+#include "../../xmppclient.h"
+#include "../../constants.h"
+#include "../../logging.h"
 #include "xmpptasks.h"
+
+namespace hello {
 
 /**
  * Example message handler
@@ -164,3 +166,5 @@ bool XmppTaskIq::HandleStanza(const txmpp::XmlElement *stanza) {
 
   return false;
 }
+
+}  // namespace hello

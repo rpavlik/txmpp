@@ -25,10 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include "xmpp/ratelimitmanager.h"
-
 #include <list>
 #include <string>
+
+#include "ratelimitmanager.h"
 
 namespace txmpp {
 

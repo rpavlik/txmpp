@@ -1,8 +1,9 @@
 #include "xmppthread.h"
 
-#include <txmpp/xmpp/xmppclientsettings.h>
+#include "../../xmppclientsettings.h"
 #include "xmppauth.h"
 
+namespace hello {
 namespace {
 
 const uint32 MSG_LOGIN = 1;
@@ -52,3 +53,5 @@ void XmppThread::OnMessage(txmpp::Message* pmsg) {
     assert(false);
   }
 }
+
+}  // namespace hello

@@ -1,8 +1,10 @@
 #include "xmppauth.h"
 
 #include <algorithm>
-#include <txmpp/xmpp/saslcookiemechanism.h>
-#include <txmpp/xmpp/saslplainmechanism.h>
+#include "../../saslcookiemechanism.h"
+#include "../../saslplainmechanism.h"
+
+namespace hello {
 
 XmppAuth::XmppAuth() : done_(false) {
 }
@@ -42,3 +44,5 @@ txmpp::SaslMechanism* XmppAuth::CreateSaslMechanism(
     return NULL;
   }
 }
+
+}  // namespace hello

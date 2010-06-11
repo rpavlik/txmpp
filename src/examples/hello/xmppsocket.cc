@@ -4,18 +4,20 @@
 #include <config.h>
 #endif
 #include <errno.h>
-#include <txmpp/base/basicdefs.h>
-#include <txmpp/base/logging.h>
+#include "../../basicdefs.h"
+#include "../../logging.h"
 #ifdef FEATURE_ENABLE_SSL
-#include <txmpp/base/ssladapter.h>
+#include "../../ssladapter.h"
 #endif
 #ifdef USE_SSLSTREAM
-#include <txmpp/base/socketstream.h>
+#include "../../socketstream.h"
 #ifdef FEATURE_ENABLE_SSL
-#include <txmpp/base/sslstreamadapter.h>
+#include "../../sslstreamadapter.h"
 #endif  // FEATURE_ENABLE_SSL
 #endif  // USE_SSLSTREAM
-#include <txmpp/base/thread.h>
+#include "../../thread.h"
+
+namespace hello {
 
 XmppSocket::XmppSocket(bool tls) : tls_(tls) {
   txmpp::Thread* pth = txmpp::Thread::Current();
@@ -223,3 +225,5 @@ bool XmppSocket::StartTls(const std::string & domainname) {
   return false;
 #endif  // !defined(FEATURE_ENABLE_SSL)
 }
+
+}  // namespace hello

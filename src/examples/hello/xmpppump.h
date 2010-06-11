@@ -1,15 +1,15 @@
-#ifndef _XMPPPUMP_H_
-#define _XMPPPUMP_H_
+#ifndef _HELLO_XMPPPUMP_H_
+#define _HELLO_XMPPPUMP_H_
 
-#include <txmpp/base/messagequeue.h>
-#include <txmpp/base/taskrunner.h>
-#include <txmpp/base/thread.h>
-#include <txmpp/base/time.h>
-#include <txmpp/xmpp/xmppclient.h>
-#include <txmpp/xmpp/xmppengine.h>
-#include <txmpp/xmpp/xmpptask.h>
+#include "../../messagequeue.h"
+#include "../../taskrunner.h"
+#include "../../thread.h"
+#include "../../time.h"
+#include "../../xmppclient.h"
+#include "../../xmppengine.h"
+#include "../../xmpptask.h"
 
-// Simple xmpp pump
+namespace hello {
 
 class XmppPumpNotify {
   public:
@@ -44,4 +44,6 @@ class XmppPump : public txmpp::MessageHandler, public txmpp::TaskRunner {
     XmppPumpNotify *notify_;
 };
 
-#endif  // _XMPPPUMP_H_
+}  // namespace hello
+
+#endif  // _HELLO_XMPPPUMP_H_

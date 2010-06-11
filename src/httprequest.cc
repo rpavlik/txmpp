@@ -36,7 +36,7 @@
 #include "socketpool.h"
 #include "ssladapter.h"
 
-namespace tyrion {
+namespace txmpp {
 
 ///////////////////////////////////////////////////////////////////////////////
 // HttpMonitor

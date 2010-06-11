@@ -1,8 +1,10 @@
-#ifndef _XMPPTASKS_H_
-#define _XMPPTASKS_H_
+#ifndef _HELLO_XMPPTASKS_H_
+#define _HELLO_XMPPTASKS_H_
 
-#include <txmpp/base/taskparent.h>
-#include <txmpp/xmpp/xmpptask.h>
+#include "../../taskparent.h"
+#include "../../xmpptask.h"
+
+namespace hello {
 
 class XmppTaskMessage : public txmpp::XmppTask {
   public:
@@ -31,4 +33,6 @@ class XmppTaskIq : public txmpp::XmppTask {
     bool HandleStanza(const txmpp::XmlElement *stanza);
 };
 
-#endif  // _XMPPTASK_H_
+}  // namespace hello
+
+#endif  // _HELLO_XMPPTASK_H_

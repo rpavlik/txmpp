@@ -25,8 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#ifndef _TXMPP_HTTPCLIENT_H__
-#define _TXMPP_HTTPCLIENT_H__
+#ifndef _TXMPP_HTTPCLIENT_H_
+#define _TXMPP_HTTPCLIENT_H_
 
 #include "common.h"
 #include "httpbase.h"

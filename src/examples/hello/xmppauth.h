@@ -1,12 +1,14 @@
-#ifndef _XMPPAUTH_H_
-#define _XMPPAUTH_H_
+#ifndef _HELLO_XMPPAUTH_H_
+#define _HELLO_XMPPAUTH_H_
 
 #include <vector>
-#include <txmpp/base/cryptstring.h>
-#include <txmpp/base/sigslot.h>
-#include <txmpp/xmpp/jid.h>
-#include <txmpp/xmpp/saslhandler.h>
-#include <txmpp/xmpp/prexmppauth.h>
+#include "../../cryptstring.h"
+#include "../../sigslot.h"
+#include "../../jid.h"
+#include "../../saslhandler.h"
+#include "../../prexmppauth.h"
+
+namespace hello {
 
 class XmppAuth: public txmpp::PreXmppAuth {
   public:
@@ -42,4 +44,6 @@ class XmppAuth: public txmpp::PreXmppAuth {
     bool done_;
 };
 
-#endif  // _XMPPAUTH_H_
+}  // namespace hello
+
+#endif  // _HELLO_XMPPAUTH_H_

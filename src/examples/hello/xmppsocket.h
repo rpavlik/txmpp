@@ -1,10 +1,10 @@
-#ifndef _XMPPSOCKET_H_
-#define _XMPPSOCKET_H_
+#ifndef _HELLO_XMPPSOCKET_H_
+#define _HELLO_XMPPSOCKET_H_
 
-#include <txmpp/base/asyncsocket.h>
-#include <txmpp/base/bytebuffer.h>
-#include <txmpp/base/sigslot.h>
-#include <txmpp/xmpp/asyncsocket.h>
+#include "../../asyncsocket.h"
+#include "../../bytebuffer.h"
+#include "../../sigslot.h"
+#include "../../xmppasyncsocket.h"
 
 // The below define selects the SSLStreamAdapter implementation for
 // SSL, as opposed to the SSLAdapter socket adapter.
@@ -14,6 +14,8 @@ namespace txmpp {
   class StreamInterface;
 };
 extern txmpp::AsyncSocket* cricket_socket_;
+
+namespace hello {
 
 class XmppSocket : public txmpp::XmppAsyncSocket, public txmpp::has_slots<> {
   public:
@@ -51,4 +53,6 @@ class XmppSocket : public txmpp::XmppAsyncSocket, public txmpp::has_slots<> {
     bool tls_;
 };
 
-#endif  // _XMPPSOCKET_H_
+}
+
+#endif  // _HELLO_XMPPSOCKET_H_

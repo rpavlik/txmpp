@@ -28,9 +28,9 @@
 #ifndef _TXMPP_RATELIMITMANAGER_H_
 #define _TXMPP_RATELIMITMANAGER_H_
 
-#include <map>
-#include "taskrunner.h"
 #include "time.h"
+#include "taskrunner.h"
+#include <map>
 
 namespace txmpp {
 
@@ -136,6 +136,6 @@ class RateLimitManager {
 
 };
 
-}  // namespace tyrion
+}  // namespace txmpp
 
 #endif  // _TXMPP_RATELIMITMANAGER_H_

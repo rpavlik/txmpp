@@ -27,12 +27,12 @@
 
 #include <time.h>
 
+#include "httpclient.h"
 #include "httpcommon-inl.h"
 
 #include "asyncsocket.h"
 #include "common.h"
 #include "diskcache.h"
-#include "httpclient.h"
 #include "logging.h"
 #include "pathutils.h"
 #include "socketstream.h"
