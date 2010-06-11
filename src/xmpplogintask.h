@@ -33,6 +33,7 @@
 #endif
 
 #include <string>
+#include <vector>
 #include "jid.h"
 #include "logging.h"
 #include "scoped_ptr.h"

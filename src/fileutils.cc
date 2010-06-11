@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "fileutils.h"
+
 #include <cassert>
 
 #ifdef WIN32
@@ -32,7 +34,6 @@
 #endif
 
 #include "pathutils.h"
-#include "fileutils.h"
 #include "stringutils.h"
 #include "stream.h"
 

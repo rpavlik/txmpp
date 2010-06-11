@@ -2,8 +2,9 @@
 // Author: araju@google.com (Avanish Raju)
 //
 
-#ifdef LINUX
 #include "linux.h"
+
+#ifdef LINUX
 
 #include <errno.h>
 #include <sys/utsname.h>

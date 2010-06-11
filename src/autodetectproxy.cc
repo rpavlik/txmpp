@@ -26,6 +26,7 @@
  */
 
 #include "autodetectproxy.h"
+
 #include "httpcommon.h"
 #include "proxydetect.h"
 

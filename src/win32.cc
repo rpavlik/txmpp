@@ -26,6 +26,7 @@
  */
 
 #include "win32.h"
+
 #include <algorithm>
 
 #include "basictypes.h"

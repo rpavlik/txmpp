@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmpplogintask.h"
+
 #include <iostream>
-#include <string>
-#include <vector>
 #include "base64.h"
 #include "common.h"
 #include "xmlelement.h"
@@ -35,7 +35,6 @@
 #include "jid.h"
 #include "saslmechanism.h"
 #include "xmppengineimpl.h"
-#include "xmpplogintask.h"
 
 namespace txmpp {
 

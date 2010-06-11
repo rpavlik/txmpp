@@ -26,6 +26,7 @@
  */
 
 #include "stringutils.h"
+
 #include "common.h"
 
 namespace txmpp {

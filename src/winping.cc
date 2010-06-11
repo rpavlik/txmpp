@@ -25,10 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "winping.h"
+
 #include "byteorder.h"
 #include "common.h"
 #include "socketaddress.h"
-#include "winping.h"
 #include "logging.h"
 #include <cassert>
 

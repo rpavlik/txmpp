@@ -26,8 +26,9 @@
  */
 
 
-#include "md5.h"
 #include "stringdigest.h"
+
+#include "md5.h"
 #include "stringencode.h"
 
 namespace txmpp {

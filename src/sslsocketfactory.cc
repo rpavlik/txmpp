@@ -25,12 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "sslsocketfactory.h"
+
 #include "autodetectproxy.h"
 #include "httpcommon.h"
 #include "httpcommon-inl.h"
 #include "socketadapters.h"
 #include "ssladapter.h"
-#include "sslsocketfactory.h"
 
 namespace txmpp {
 

@@ -25,9 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "win32window.h"
+
 #include "common.h"
 #include "logging.h"
-#include "win32window.h"
 
 namespace txmpp {
 

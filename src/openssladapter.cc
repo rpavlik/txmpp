@@ -1,6 +1,4 @@
-#if HAVE_CONFIG_H
-#include "config.h"
-#endif  // HAVE_CONFIG_H
+#include "openssladapter.h"
 
 #if HAVE_OPENSSL_SSL_H
 
@@ -13,7 +11,6 @@
 
 #include "common.h"
 #include "logging.h"
-#include "openssladapter.h"
 #include "stringutils.h"
 #include "Equifax_Secure_Global_eBusiness_CA-1.h"
 

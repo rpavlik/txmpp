@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "pathutils.h"
+
 #ifdef WIN32
 #include "win32.h"
 #include <shellapi.h>
@@ -35,7 +37,6 @@
 #include "common.h"
 #include "fileutils.h"
 #include "logging.h"
-#include "pathutils.h"
 #include "stringutils.h"
 #include "urlencode.h"
 

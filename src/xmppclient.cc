@@ -26,6 +26,7 @@
  */
 
 #include "xmppclient.h"
+
 #include "xmpptask.h"
 #include "constants.h"
 #include "sigslot.h"

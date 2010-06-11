@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "socketadapters.h"
+
 #if defined(_MSC_VER) && _MSC_VER < 1300
 #pragma warning(disable:4786)
 #endif
@@ -45,7 +47,6 @@
 #include "common.h"
 #include "httpcommon.h"
 #include "logging.h"
-#include "socketadapters.h"
 #include "stringencode.h"
 #include "stringutils.h"
 

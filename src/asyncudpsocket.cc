@@ -25,11 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "asyncudpsocket.h"
+
 #if defined(_MSC_VER) && _MSC_VER < 1300
 #pragma warning(disable:4786)
 #endif
 
-#include "asyncudpsocket.h"
 #include "logging.h"
 
 namespace txmpp {

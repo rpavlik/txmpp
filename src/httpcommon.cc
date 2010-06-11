@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "httpcommon.h"
+
 #include <time.h>
 
 #ifdef WIN32
@@ -41,7 +43,6 @@
 #include "base64.h"
 #include "common.h"
 #include "cryptstring.h"
-#include "httpcommon.h"
 #include "socketaddress.h"
 #include "stringdigest.h"
 #include "stringencode.h"

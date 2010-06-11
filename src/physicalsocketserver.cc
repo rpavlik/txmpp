@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "physicalsocketserver.h"
+
 #if defined(_MSC_VER) && _MSC_VER < 1300
 #pragma warning(disable:4786)
 #endif
@@ -56,7 +58,6 @@
 #include "common.h"
 #include "logging.h"
 #include "nethelpers.h"
-#include "physicalsocketserver.h"
 #include "time.h"
 #include "winping.h"
 #include "win32socketinit.h"

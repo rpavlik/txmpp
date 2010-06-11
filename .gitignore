@@ -6,4 +6,5 @@
 *.so
 .*.swp
 .scon*
+config.h
 hello-example

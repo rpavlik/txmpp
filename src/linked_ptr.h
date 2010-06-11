@@ -37,11 +37,11 @@
 #ifndef _TXMPP_LINKED_PTR_H_
 #define _TXMPP_LINKED_PTR_H_
 
-namespace txmpp {
-
 #ifndef NO_CONFIG_H
 #include "config.h"
 #endif
+
+namespace txmpp {
 
 /* For ANSI-challenged compilers, you may want to #define
  * NO_MEMBER_TEMPLATES, explicit or mutable */

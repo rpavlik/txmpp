@@ -25,13 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmlelement.h"
+
 #include <string>
 #include <iostream>
 #include <vector>
 #include <sstream>
 
 #include "common.h"
-#include "xmlelement.h"
 #include "qname.h"
 #include "xmlparser.h"
 #include "xmlbuilder.h"

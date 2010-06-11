@@ -25,9 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmppstanzaparser.h"
+
 #include "xmlelement.h"
 #include "common.h"
-#include "xmppstanzaparser.h"
 #include "constants.h"
 #include <expat.h>
 

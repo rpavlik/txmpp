@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "time.h"
+
 #ifdef POSIX
 #include <sys/time.h>
 #endif
@@ -35,7 +37,6 @@
 #endif
 
 #include "common.h"
-#include "time.h"
 
 #define EFFICIENT_IMPLEMENTATION 1
 

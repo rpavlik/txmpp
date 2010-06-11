@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <algorithm>
-
 #include "taskparent.h"
+
+#include <algorithm>
 
 #include "task.h"
 #include "taskrunner.h"

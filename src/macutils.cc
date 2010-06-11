@@ -25,11 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "macutils.h"
+
 #include <sstream>
 
 #include "common.h"
 #include "logging.h"
-#include "macutils.h"
 #include "scoped_ptr.h"
 #include "stringutils.h"
 

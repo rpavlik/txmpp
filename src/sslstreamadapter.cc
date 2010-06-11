@@ -25,9 +25,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if HAVE_CONFIG_H
-#include "config.h"
-#endif  // HAVE_CONFIG_H
+#include "sslstreamadapter.h"
 
 // Decide which (if any) implementation of SSL we will use.
 #if !defined(SSL_USE_SCHANNEL) && !defined(SSL_USE_OPENSSL)
@@ -37,8 +35,6 @@
 #define SSL_USE_OPENSSL HAVE_OPENSSL_SSL_H
 #endif  // !WIN32
 #endif
-
-#include "sslstreamadapter.h"
 
 #if SSL_USE_SCHANNEL
 

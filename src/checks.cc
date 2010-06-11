@@ -25,11 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "checks.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
-#include "checks.h"
 #include "logging.h"
 
 void Fatal(const char* file, int line, const char* format, ...) {

@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "diskcache.h"
+
 #include <time.h>
 
 #ifdef WIN32
@@ -32,7 +34,6 @@
 #endif
 
 #include "common.h"
-#include "diskcache.h"
 #include "fileutils.h"
 #include "pathutils.h"
 #include "stream.h"

@@ -25,10 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmppengineimpl.h"
+
 #include <vector>
 #include <algorithm>
 #include "common.h"
-#include "xmppengineimpl.h"
 #include "constants.h"
 
 namespace txmpp {

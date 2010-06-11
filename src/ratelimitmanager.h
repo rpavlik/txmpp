@@ -35,6 +35,7 @@
 #include "time.h"
 #include "taskrunner.h"
 #include <map>
+#include <string>
 
 namespace txmpp {
 

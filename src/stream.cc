@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "stream.h"
+
 #if defined(POSIX)
 #include <sys/file.h>
 #endif  // POSIX
@@ -35,7 +37,6 @@
 #include "basictypes.h"
 #include "common.h"
 #include "messagequeue.h"
-#include "stream.h"
 #include "stringencode.h"
 #include "stringutils.h"
 #include "thread.h"

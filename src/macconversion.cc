@@ -25,12 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "macconversion.h"
+
 #ifdef OSX
 
 #include <CoreFoundation/CoreFoundation.h>
 
 #include "logging.h"
-#include "macconversion.h"
 
 bool p_convertHostCFStringRefToCPPString(
   const CFStringRef cfstr, std::string& cppstr) {

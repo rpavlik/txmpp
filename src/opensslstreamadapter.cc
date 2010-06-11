@@ -25,13 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#if HAVE_CONFIG_H
-#include "config.h"
-#endif  // HAVE_CONFIG_H
+#include "opensslstreamadapter.h"
 
 #if HAVE_OPENSSL_SSL_H
-
-#include "opensslstreamadapter.h"
 
 #include <openssl/bio.h>
 #include <openssl/crypto.h>

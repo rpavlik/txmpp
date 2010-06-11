@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "logging.h"
+
 #ifdef WIN32
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
@@ -43,7 +45,6 @@ static const char kLibjingle[] = "libjingle";
 #include <iomanip>
 #include <vector>
 
-#include "logging.h"
 #include "stream.h"
 #include "stringencode.h"
 #include "stringutils.h"

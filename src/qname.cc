@@ -25,10 +25,11 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "qname.h"
+
 #include <string>
 #include "common.h"
 #include "xmlelement.h"
-#include "qname.h"
 #include "xmlconstants.h"
 
 namespace txmpp {

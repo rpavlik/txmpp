@@ -28,6 +28,10 @@
 #ifndef _TXMPP_PREXMPPAUTHIMPL_H_
 #define _TXMPP_PREXMPPAUTHIMPL_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include <vector>
 #include "cryptstring.h"
 #include "sigslot.h"

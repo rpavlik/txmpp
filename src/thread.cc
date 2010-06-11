@@ -25,13 +25,14 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "thread.h"
+
 #ifdef POSIX
 #include <time.h>
 #endif
 
 #include "common.h"
 #include "logging.h"
-#include "thread.h"
 #include "time.h"
 
 #if defined(OSX_USE_COCOA)

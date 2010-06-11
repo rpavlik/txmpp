@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "common.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <memory.h>
@@ -39,7 +41,6 @@
 #endif  // OSX
 
 #include <algorithm>
-#include "common.h"
 #include "logging.h"
 
 //////////////////////////////////////////////////////////////////////

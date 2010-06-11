@@ -4,7 +4,22 @@ def Abort(message):
     print message
     Exit(1)
 
-defines = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H=1', 'POSIX']
+def CreateConfig(define_list, path='src/config.h'):
+    file = None
+    try:
+        file = open(path, 'w')
+        file.write('#ifndef _TXMPP_CONFIG_H_\n')
+        file.write('#define _TXMPP_CONFIG_H_\n\n')
+        for define in define_list:
+            file.write('#ifndef %s\n#define %s 1\n#endif  // %s\n\n'
+                       % (define, define, define))
+        file.write('#endif  // _TXMPP_CONFIG_H_\n')
+    finally:
+        if file is not None:
+            file.close()
+
+config = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H', 'POSIX', 'USE_SSLSTREAM']
+defines = []
 flags = ''
 frameworks = []
 libraries = ['crypto', 'expat', 'pthread', 'ssl']
@@ -123,13 +138,13 @@ AddOption(
 
 if GetOption('debug'):
     flags += ' -g'
-    defines += ['_DEBUG']
+    config += ['_DEBUG']
 
 if system == 'linux':
-    defines += ['LINUX']
+    config += ['LINUX']
     src += posix_src
 elif system == 'darwin':
-    defines += ['OSX']
+    config += ['OSX']
     frameworks += [
         'CoreServices',
         'Carbon',
@@ -137,6 +152,8 @@ elif system == 'darwin':
         'SystemConfiguration',
     ]
     src += posix_src + darwin_src
+
+CreateConfig(config)
 
 env = Environment(
     CXXFLAGS=flags,
@@ -152,11 +169,10 @@ if system in ('darwin', 'linux'):
 libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 
 if GetOption('examples'):
-    flags += ' -Isrc'
     hello_src = [
         'src/examples/hello/main.cc',
         'src/examples/hello/xmpppump.cc',
         'src/examples/hello/xmpptasks.cc',
         'src/examples/hello/xmppthread.cc',
     ]
-    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines+['USE_SSLSTREAM'], LIBS=libtxmpp)
+    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtxmpp)

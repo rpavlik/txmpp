@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "flags.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -34,8 +36,6 @@
 #include "win32.h"
 #include <shellapi.h>
 #endif
-
-#include "flags.h"
 
 
 // -----------------------------------------------------------------------------

@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "schanneladapter.h"
+
 #include "win32.h"
 #define SECURITY_WIN32
 #include <security.h>
@@ -35,7 +37,6 @@
 
 #include "common.h"
 #include "logging.h"
-#include "schanneladapter.h"
 #include "sec_buffer.h"
 #include "thread.h"
 

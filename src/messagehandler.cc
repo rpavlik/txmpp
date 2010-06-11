@@ -26,6 +26,7 @@
  */
 
 #include "messagehandler.h"
+
 #include "messagequeue.h"
 
 namespace txmpp {

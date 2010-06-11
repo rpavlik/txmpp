@@ -25,9 +25,10 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "httpclient.h"
+
 #include <time.h>
 
-#include "httpclient.h"
 #include "httpcommon-inl.h"
 
 #include "asyncsocket.h"

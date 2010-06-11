@@ -27,11 +27,9 @@
 
 // Handling of certificates and keypairs for SSLStreamAdapter's peer mode.
 
-#include <string>
+#include "sslidentity.h"
 
-#if HAVE_CONFIG_H
-#include "config.h"
-#endif  // HAVE_CONFIG_H
+#include <string>
 
 // Decide which (if any) implementation of SSL we will use.
 #if !defined(SSL_USE_SCHANNEL) && !defined(SSL_USE_OPENSSL)
@@ -41,8 +39,6 @@
 #define SSL_USE_OPENSSL HAVE_OPENSSL_SSL_H
 #endif  // !WIN32
 #endif
-
-#include "sslidentity.h"
 
 #if SSL_USE_SCHANNEL
 

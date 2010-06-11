@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmppengineimpl.h"
+
 #define TRACK_ARRAY_ALLOC_PROBLEM
 
 #include <vector>
@@ -32,7 +34,6 @@
 #include <algorithm>
 #include "xmlelement.h"
 #include "common.h"
-#include "xmppengineimpl.h"
 #include "xmpplogintask.h"
 #include "constants.h"
 #include "xmlprinter.h"

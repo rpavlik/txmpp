@@ -25,6 +25,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "messagequeue.h"
+
 #if defined(_MSC_VER) && _MSC_VER < 1300
 #pragma warning(disable:4786)
 #endif
@@ -35,7 +37,6 @@
 
 #include "common.h"
 #include "logging.h"
-#include "messagequeue.h"
 #include "physicalsocketserver.h"
 
 

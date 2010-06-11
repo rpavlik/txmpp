@@ -29,6 +29,8 @@
 //
 // Author: <bpm@google.com> (Brian McBarron)
 
+#include "httpbase.h"
+
 #ifdef WIN32
 #include "win32.h"
 #else  // !WIN32
@@ -36,7 +38,6 @@
 #endif  // !WIN32
 
 #include "common.h"
-#include "httpbase.h"
 #include "logging.h"
 #include "socket.h"
 #include "stringutils.h"

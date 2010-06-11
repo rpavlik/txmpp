@@ -26,6 +26,7 @@
  */
 
 #include "xmpptask.h"
+
 #include "xmppclient.h"
 #include "xmppengine.h"
 #include "constants.h"

@@ -25,12 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmlprinter.h"
+
 #include <string>
 #include <iostream>
 #include <vector>
 #include <sstream>
 #include "xmlelement.h"
-#include "xmlprinter.h"
 #include "xmlnsstack.h"
 #include "xmlconstants.h"
 

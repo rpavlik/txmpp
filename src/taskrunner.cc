@@ -25,9 +25,9 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <algorithm>
-
 #include "taskrunner.h"
+
+#include <algorithm>
 
 #include "common.h"
 #include "scoped_ptr.h"

@@ -25,11 +25,12 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "xmlbuilder.h"
+
 #include <vector>
 #include <set>
 #include "common.h"
 #include "xmlelement.h"
-#include "xmlbuilder.h"
 #include <expat.h>
 
 namespace txmpp {

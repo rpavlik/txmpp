@@ -28,6 +28,10 @@
 #ifndef _TXMPP_XMPPASYNCSOCKETIMPL_H_
 #define _TXMPP_XMPPASYNCSOCKETIMPL_H_
 
+#ifndef NO_CONFIG_H
+#include "config.h"
+#endif
+
 #include "asyncsocket.h"
 #include "bytebuffer.h"
 #include "sigslot.h"

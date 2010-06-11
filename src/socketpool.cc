@@ -25,12 +25,13 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include "socketpool.h"
+
 #include <iomanip>
 
 #include "asyncsocket.h"
 #include "logging.h"
 #include "socketfactory.h"
-#include "socketpool.h"
 #include "socketstream.h"
 #include "thread.h"
 

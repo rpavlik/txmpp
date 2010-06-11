@@ -32,6 +32,7 @@
 #include "config.h"
 #endif
 
+#include "logging.h"
 #include "proxyinfo.h"
 #include "socketserver.h"
 

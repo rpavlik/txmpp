@@ -26,6 +26,7 @@
  */
 
 #include "win32socketserver.h"
+
 #include "byteorder.h"
 #include "common.h"
 #include "logging.h"
