@@ -22,21 +22,17 @@ class XmppPump : public txmpp::MessageHandler, public txmpp::TaskRunner {
     XmppPump(XmppPumpNotify * notify = NULL);
 
     txmpp::XmppClient *client() { return client_; }
+    txmpp::XmppReturnStatus SendStanza(const txmpp::XmlElement *stanza);
+    int64 CurrentTime();
 
     void DoLogin(const txmpp::XmppClientSettings & xcs,
                  txmpp::XmppAsyncSocket* socket,
                  txmpp::PreXmppAuth* auth);
     void DoDisconnect();
-
-    void OnStateChange(txmpp::XmppEngine::State state);
-
     void WakeTasks();
 
-    int64 CurrentTime();
-
+    void OnStateChange(txmpp::XmppEngine::State state);
     void OnMessage(txmpp::Message *pmsg);
-
-    txmpp::XmppReturnStatus SendStanza(const txmpp::XmlElement *stanza);
 
   private:
     txmpp::XmppClient *client_;

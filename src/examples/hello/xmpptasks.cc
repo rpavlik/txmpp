@@ -1,8 +1,8 @@
 #include <iostream>
 #include <sstream>
-#include "../../xmppclient.h"
 #include "../../constants.h"
 #include "../../logging.h"
+#include "../../xmppclient.h"
 #include "xmpptasks.h"
 
 namespace hello {

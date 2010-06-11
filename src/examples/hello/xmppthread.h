@@ -15,7 +15,6 @@ class XmppThread: public txmpp::Thread, XmppPumpNotify, txmpp::MessageHandler {
     txmpp::XmppClient* client() { return pump_->client(); }
 
     void ProcessMessages(int cms);
-
     void Login(const txmpp::XmppClientSettings & xcs);
     void Disconnect();
 

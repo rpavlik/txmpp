@@ -10,10 +10,9 @@ namespace {
 const uint32 MSG_LOGIN = 1;
 const uint32 MSG_DISCONNECT = 2;
 
-struct LoginData: public txmpp::MessageData {
+struct LoginData : public txmpp::MessageData {
   LoginData(const txmpp::XmppClientSettings& s) : xcs(s) {}
   virtual ~LoginData() {}
-
   txmpp::XmppClientSettings xcs;
 };
 
@@ -43,16 +42,20 @@ void XmppThread::OnStateChange(txmpp::XmppEngine::State state) {
 }
 
 void XmppThread::OnMessage(txmpp::Message* pmsg) {
-  if (pmsg->message_id == MSG_LOGIN) {
-    assert(pmsg->pdata);
-    LoginData* data = reinterpret_cast<LoginData*>(pmsg->pdata);
-    pump_->DoLogin(data->xcs, new txmpp::XmppAsyncSocketImpl(true),
-                   new txmpp::PreXmppAuthImpl());
-    delete data;
-  } else if (pmsg->message_id == MSG_DISCONNECT) {
-    pump_->DoDisconnect();
-  } else {
-    assert(false);
+  switch (pmsg->message_id) {
+    case MSG_LOGIN: {
+      assert(pmsg->pdata);
+      LoginData* data = reinterpret_cast<LoginData*>(pmsg->pdata);
+      pump_->DoLogin(data->xcs, new txmpp::XmppAsyncSocketImpl(true),
+                     new txmpp::PreXmppAuthImpl());
+      delete data;
+      }
+      break;
+    case MSG_DISCONNECT:
+      pump_->DoDisconnect();
+      break;
+    default:
+      assert(false);
   }
 }
 
