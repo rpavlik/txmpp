@@ -1,7 +1,7 @@
 #include "xmpppump.h"
 
 #include "../../logging.h"
-#include "xmppauth.h"
+#include "../../prexmppauthimpl.h"
 #include "xmpptasks.h"
 
 namespace hello {

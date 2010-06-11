@@ -42,6 +42,7 @@ src = [
     'src/opensslidentity.cc',
     'src/opensslstreamadapter.cc',
     'src/pathutils.cc',
+    'src/prexmppauthimpl.cc',
     'src/physicalsocketserver.cc',
     'src/proxydetect.cc',
     'src/proxyinfo.cc',
@@ -74,6 +75,7 @@ src = [
     'src/jid.cc',
     'src/ratelimitmanager.cc',
     'src/saslmechanism.cc',
+    'src/xmppasyncsocketimpl.cc',
     'src/xmppclient.cc',
     'src/xmppengineimpl.cc',
     'src/xmppengineimpl_iq.cc',
@@ -154,9 +156,7 @@ if GetOption('examples'):
     flags += ' -Isrc'
     hello_src = [
         'src/examples/hello/main.cc',
-        'src/examples/hello/xmppauth.cc',
         'src/examples/hello/xmpppump.cc',
-        'src/examples/hello/xmppsocket.cc',
         'src/examples/hello/xmpptasks.cc',
         'src/examples/hello/xmppthread.cc',
     ]

@@ -1,7 +1,8 @@
 #include "xmppthread.h"
 
+#include "../../prexmppauthimpl.h"
+#include "../../xmppasyncsocketimpl.h"
 #include "../../xmppclientsettings.h"
-#include "xmppauth.h"
 
 namespace hello {
 namespace {
@@ -45,7 +46,8 @@ void XmppThread::OnMessage(txmpp::Message* pmsg) {
   if (pmsg->message_id == MSG_LOGIN) {
     assert(pmsg->pdata);
     LoginData* data = reinterpret_cast<LoginData*>(pmsg->pdata);
-    pump_->DoLogin(data->xcs, new XmppSocket(true), new XmppAuth());
+    pump_->DoLogin(data->xcs, new txmpp::XmppAsyncSocketImpl(true),
+                   new txmpp::PreXmppAuthImpl());
     delete data;
   } else if (pmsg->message_id == MSG_DISCONNECT) {
     pump_->DoDisconnect();

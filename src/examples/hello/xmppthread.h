@@ -4,7 +4,6 @@
 #include "../../thread.h"
 #include "../../xmppclientsettings.h"
 #include "xmpppump.h"
-#include "xmppsocket.h"
 
 namespace hello {
 
