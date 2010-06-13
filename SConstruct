@@ -18,7 +18,7 @@ def CreateConfig(define_list, path='src/config.h'):
         if file is not None:
             file.close()
 
-config = ['FEATURE_ENABLE_SSL', 'SSL_USE_OPENSSL', 'HAVE_OPENSSL_SSL_H', 'POSIX', 'USE_SSLSTREAM']
+config = ['FEATURE_ENABLE_SSL', 'HAVE_OPENSSL_SSL_H', 'POSIX', 'SSL_USE_OPENSSL', 'USE_SSLSTREAM']
 defines = []
 flags = ''
 frameworks = []
