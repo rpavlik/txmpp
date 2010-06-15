@@ -163,8 +163,12 @@ env = Environment(
 conf = Configure(env)
 
 if system in ('darwin', 'linux'):
+    if not conf.CheckCXXHeader('expat.h'):
+        Abort('expat not found')
     if not conf.CheckCXXHeader('pthread.h'):
-        Abort('pthread.h not found')
+        Abort('pthreads not found')
+    if not conf.CheckCXXHeader('openssl/crypto.h'):
+        Abort('openssl not found')
 
 libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries)
 
