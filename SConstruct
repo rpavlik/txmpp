@@ -71,7 +71,11 @@ def Abort(message):
     print message
     Exit(1)
 
-def CreateConfig(define_list, path='src/config.h'):
+def Copy(src, dst):
+    print 'Copying %s to %s' % (src, dst)
+    shutil.copy2(src, dst)
+
+def CreateConfigHeader(define_list, path='src/config.h'):
     file = None
     try:
         file = open(path, 'w')
@@ -85,13 +89,48 @@ def CreateConfig(define_list, path='src/config.h'):
         if file is not None:
             file.close()
 
+def CreateDirectory(path):
+    if not os.path.exists(path):
+        print 'Creating directory %s' % path
+        os.makedirs(path)
+
+def Link(src, dst):
+    print 'Linking %s to %s' % (src, dst)
+    os.symlink(src, dst)
+
+_push_pop = []
+
+def Pushd(path):
+    _push_pop.insert(0, os.getcwd())
+    print 'Pushd to %s' % path
+    os.chdir(path)
+
+def Popd():
+    if len(_push_pop) > 0:
+        os.chdir(_push_pop[0])
+        print 'Popd to %s' % _push_pop[0]
+        del _push_pop[0]
+    else:
+        print 'Popd stack empty'
+
+def Remove(path):
+    for p in glob.glob(path):
+        print 'Deleting %s' % p
+        os.remove(p)
+
 # Setup environment
 
 env = Environment()
 
 # Default settings
 
-config = ['FEATURE_ENABLE_SSL', 'HAVE_OPENSSL_SSL_H', 'POSIX', 'SSL_USE_OPENSSL', 'USE_SSLSTREAM']
+config = [
+    'FEATURE_ENABLE_SSL',
+    'HAVE_OPENSSL_SSL_H',
+    'POSIX',
+    'SSL_USE_OPENSSL',
+    'USE_SSLSTREAM',
+]
 defines = []
 flags = ''
 frameworks = []
@@ -192,10 +231,13 @@ if GetOption('debug'):
 if system == 'linux':
     config += ['LINUX']
     soname = 'lib%s.so.%s' % (name, version)
+    link += ' -Wl,-soname,%s' % soname
     src += posix_src
 elif system == 'darwin':
     config += ['OSX']
     soname = 'lib%s.dylib.%s' % (name, version)
+    link += ' -compatibility_version %s' % version
+    link += ' -current_version %s' % version
     frameworks += [
         'CoreServices',
         'Carbon',
@@ -208,15 +250,12 @@ if GetOption('flags'):
     env.Append(CFLAGS=GetOption('flags'))
     env.Append(CXXFLAGS=GetOption('flags'))
 
-link += '-Wl,-soname,${SONAME}'
-env['SONAME'] = soname
-
 env.Append(CXXFLAGS=flags)
 env.Append(FRAMEWORKS=frameworks)
 
 # Create build configuration file
 
-CreateConfig(config)
+CreateConfigHeader(config)
 
 # Check for required libraries
 
@@ -231,7 +270,13 @@ if system in ('darwin', 'linux'):
 
 # Build library
 
-libtxmpp = env.SharedLibrary(name, src, CPPDEFINES=defines, LIBS=libraries, LINKFLAGS=link)
+libtxmpp = env.SharedLibrary(
+    name,
+    src,
+    CPPDEFINES=defines,
+    LIBS=libraries,
+    LINKFLAGS=link,
+)
 
 # Build examples
 
@@ -242,28 +287,33 @@ if GetOption('examples'):
         'src/examples/hello/xmpptasks.cc',
         'src/examples/hello/xmppthread.cc',
     ]
-    hello = env.Program(target='hello-example', source=hello_src, CPPDEFINES=defines, LIBS=libtxmpp)
+    hello = env.Program(
+        target='hello-example',
+        source=hello_src,
+        CPPDEFINES=defines,
+        LIBS=libtxmpp,
+    )
 
 if GetOption('install'):
 
-    includedir = os.path.join(GetOption('includedir').replace('${PREFIX}', prefix), name)
+    includedir = GetOption('includedir').replace('${PREFIX}', prefix)
+    includedir = os.path.join(includedir, name)
     libdir = GetOption('libdir').replace('${PREFIX}', prefix)
 
     libtxmpp = str(libtxmpp[0])
 
     # Install library
-    if not os.path.exists(libdir):
-        os.makedirs(libdir)
-    os.rename(libtxmpp, os.path.join(libdir, soname))
-    cwd = os.getcwd()
-    os.chdir(libdir)
+    CreateDirectory(libdir)
+    Remove('%s/libtxmpp.*' % libdir)
+    Copy(libtxmpp, os.path.join(libdir, soname))
+    Pushd(libdir)
     for x in range(1, 4):
         lname = '.'.join(soname.split('.')[:-x])
-        os.symlink(soname, lname)
-    os.chdir(cwd)
+        Link(soname, lname)
+    Popd()
 
     # Install header files
-    if not os.path.exists(includedir):
-        os.makedirs(includedir)
+    CreateDirectory(includedir)
+    Remove('%s/*.h' % includedir)
     for path in glob.glob('src/*.h'):
-        shutil.copy2(path, includedir)
+        Copy(path, includedir)
