@@ -3,7 +3,9 @@ import os
 import platform
 import shutil
 
+#
 # Command line options
+#
 
 AddOption(
     '--prefix',
@@ -45,6 +47,8 @@ AddOption(
     nargs=1,
     action='store',
     default='',
+    metavar='DIR',
+    help='compiler flags',
 )
 
 AddOption(
@@ -65,7 +69,9 @@ AddOption(
     action='store_true',
 )
 
+#
 # Helper functions
+#
 
 def Abort(message):
     print message
@@ -118,21 +124,39 @@ def Remove(path):
         print 'Deleting %s' % p
         os.remove(p)
 
+
+def SetupEnvironment(env):
+    # Include paths
+    path_list = []
+    if 'C_INCLUDE_PATH' in os.environ:
+        path_list.extend(os.environ['C_INCLUDE_PATH'].split(':'))
+    if 'CPLUS_INCLUDE_PATH' in os.environ:
+        path_list.extend(os.environ['CPLUS_INCLUDE_PATH'].split(':'))
+    env.Append(CPPPATH=path_list)
+    # Library paths
+    path_list = []
+    if 'LIBRARY_PATH' in os.environ:
+        path_list.extend(os.environ['LIBRARY_PATH'].split(':'))
+    env.Append(LIBPATH=path_list)
+
+#
 # Setup environment
+#
 
 env = Environment()
 
+#
 # Default settings
+#
 
-config = [
+defines = [
     'FEATURE_ENABLE_SSL',
     'HAVE_OPENSSL_SSL_H',
     'POSIX',
     'SSL_USE_OPENSSL',
     'USE_SSLSTREAM',
 ]
-defines = []
-flags = ''
+flags = '-Wall -02'
 frameworks = []
 libraries = ['crypto', 'expat', 'pthread', 'ssl']
 link = ''
@@ -222,19 +246,24 @@ posix_src = [
     'src/unixfilesystem.cc',
 ]
 
+#
 # Apply various options
+#
 
 if GetOption('debug'):
     flags += ' -g'
-    config += ['_DEBUG']
+    defines += ['_DEBUG']
+
+if GetOption('flags'):
+    flags += ' %s' % GetOption('flags')
 
 if system == 'linux':
-    config += ['LINUX']
+    defines += ['LINUX']
     soname = 'lib%s.so.%s' % (name, version)
     link += ' -Wl,-soname,%s' % soname
     src += posix_src
 elif system == 'darwin':
-    config += ['OSX']
+    defines += ['OSX']
     soname = 'lib%s.dylib.%s' % (name, version)
     link += ' -compatibility_version %s' % version
     link += ' -current_version %s' % version
@@ -246,6 +275,10 @@ elif system == 'darwin':
     ]
     src += posix_src + darwin_src
 
+if 'POSIX' in defines:
+    flags += ' -pthread'
+    libraries += ['pthread']
+
 if GetOption('flags'):
     env.Append(CFLAGS=GetOption('flags'))
     env.Append(CXXFLAGS=GetOption('flags'))
@@ -253,11 +286,17 @@ if GetOption('flags'):
 env.Append(CXXFLAGS=flags)
 env.Append(FRAMEWORKS=frameworks)
 
+SetupEnvironment(env)
+
+#
 # Create build configuration file
+#
 
-CreateConfigHeader(config)
+CreateConfigHeader(defines)
 
-# Check for required libraries
+#
+# Configure environment
+#
 
 conf = Configure(env)
 
@@ -268,9 +307,13 @@ if system in ('darwin', 'linux'):
         if not conf.CheckLib(library):
             Abort('Unable to find library %s.' % name)
 
-# Build library
+env = conf.Finish()
 
-libtxmpp = env.SharedLibrary(
+#
+# Build library
+#
+
+txmpp_library = env.SharedLibrary(
     name,
     src,
     CPPDEFINES=defines,
@@ -278,7 +321,9 @@ libtxmpp = env.SharedLibrary(
     LINKFLAGS=link,
 )
 
+#
 # Build examples
+#
 
 if GetOption('examples'):
     hello_src = [
@@ -291,7 +336,7 @@ if GetOption('examples'):
         target='hello-example',
         source=hello_src,
         CPPDEFINES=defines,
-        LIBS=libtxmpp,
+        LIBS=txmpp_library,
     )
 
 if GetOption('install'):
@@ -300,12 +345,12 @@ if GetOption('install'):
     includedir = os.path.join(includedir, name)
     libdir = GetOption('libdir').replace('${PREFIX}', prefix)
 
-    libtxmpp = str(libtxmpp[0])
+    txmpp_library = str(txmpp_library[0])
 
     # Install library
     CreateDirectory(libdir)
-    Remove('%s/libtxmpp.*' % libdir)
-    Copy(libtxmpp, os.path.join(libdir, soname))
+    Remove(os.path.join(libdir, 'libtxmpp.*'))
+    Copy(txmpp_library, os.path.join(libdir, soname))
     Pushd(libdir)
     for x in range(1, 4):
         lname = '.'.join(soname.split('.')[:-x])
@@ -314,6 +359,6 @@ if GetOption('install'):
 
     # Install header files
     CreateDirectory(includedir)
-    Remove('%s/*.h' % includedir)
-    for path in glob.glob('src/*.h'):
+    Remove(os.path.join(includedir, '*.h'))
+    for path in glob.glob(os.path.join('src', '*.h')):
         Copy(path, includedir)
