@@ -156,7 +156,7 @@ defines = [
     'SSL_USE_OPENSSL',
     'USE_SSLSTREAM',
 ]
-flags = '-Wall -02'
+flags = '-Wall'
 frameworks = []
 libraries = ['crypto', 'expat', 'pthread', 'ssl']
 link = ''
@@ -278,6 +278,9 @@ elif system == 'darwin':
 if 'POSIX' in defines:
     flags += ' -pthread'
     libraries += ['pthread']
+
+if os.environ.get('NO_OPTIMIZATION') != '1':
+    flags += ' -O2'
 
 if GetOption('flags'):
     env.Append(CFLAGS=GetOption('flags'))
