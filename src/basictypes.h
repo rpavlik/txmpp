@@ -62,8 +62,10 @@ typedef __int64 int64;
 #else
 typedef unsigned long long uint64;
 typedef long long int64;
+#ifndef OSX
 #define INT64_C(x) x ## LL
 #define UINT64_C(x) x ## ULL
+#endif  // OSX
 #define INT64_F "ll"
 #endif /* COMPILER_MSVC */
 #if defined(__GNUC__) && defined(__LP64__)
