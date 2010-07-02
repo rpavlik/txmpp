@@ -1,0 +1,7 @@
+0.0.2 -- ????-??-??
+* Add compiler optimizations
+* Fix compiler warnings (OS X)
+* Fix installer (OS X)
+
+0.0.1 -- 2010-06-15
+* Initial release
