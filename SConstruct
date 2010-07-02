@@ -286,6 +286,7 @@ if GetOption('flags'):
     env.Append(CFLAGS=GetOption('flags'))
     env.Append(CXXFLAGS=GetOption('flags'))
 
+env.Append(CFLAGS=flags)
 env.Append(CXXFLAGS=flags)
 env.Append(FRAMEWORKS=frameworks)
 
