@@ -20,7 +20,7 @@ See the `src/examples` directory.
 
 ### License
 
-This work is licensed under a BSD-style License (see the LICENSE file).
+This work is licensed under the New BSD License (see the LICENSE file).
 
 [xep0166]: http://xmpp.org/extensions/xep-0166.html
 [libjingle]: http://code.google.com/p/libjingle/
