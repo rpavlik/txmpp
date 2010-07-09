@@ -41,15 +41,7 @@ typedef __int64 int64;
 #else
 typedef long long int64;
 #endif /* COMPILER_MSVC */
-#if defined(__GNUC__) && defined(__LP64__)
-// __LP64__ means that long is 64 bits and int is 32 bits, so we must use int
-// for int32.
 typedef int int32;
-#else
-// On our other platforms int is still 32 bits, but int32 is canonically defined
-// as long (also 32 bits), so we do that to avoid conflicts with system headers.
-typedef long int32;
-#endif
 typedef short int16;
 typedef char int8;
 
@@ -68,13 +60,7 @@ typedef long long int64;
 #endif  // OSX
 #define INT64_F "ll"
 #endif /* COMPILER_MSVC */
-#if defined(__GNUC__) && defined(__LP64__)
-// See comment above on definition of int32.
 typedef unsigned int uint32;
-#else
-// See comment above on definition of int32.
-typedef unsigned long uint32;
-#endif
 typedef unsigned short uint16;
 typedef unsigned char uint8;
 #endif  // INT_TYPES_DEFINED

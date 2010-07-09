@@ -349,6 +349,7 @@ bool SocketAddress::GetLocalIPs(std::vector<uint32>& ips) {
         NetworkToHost32(*reinterpret_cast<uint32 *>(pHost->h_addr_list[i]));
       ips.push_back(ip);
     }
+    FreeHostEnt(pHost);
     return !ips.empty();
   }
   LOG(LS_ERROR) << "gethostbyname error: " << errcode;

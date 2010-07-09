@@ -32,7 +32,9 @@
 #include <windows.h>
 #include <ntsecapi.h>
 #else
+#ifdef USE_OPENSSL
 #include <openssl/rand.h>
+#endif
 #endif
 
 #include "base64.h"

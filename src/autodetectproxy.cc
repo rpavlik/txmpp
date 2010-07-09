@@ -28,6 +28,7 @@
 #include "autodetectproxy.h"
 
 #include "httpcommon.h"
+#include "httpcommon-inl.h"
 #include "proxydetect.h"
 
 namespace txmpp {
