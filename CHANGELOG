@@ -1,3 +1,6 @@
+0.0.3 -- ????-??-??
+ * Upstream revisions 22-26
+
 0.0.2 -- 2010-07-02
 * Add compiler optimizations
 * Fix compiler warnings (OS X)
