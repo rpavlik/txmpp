@@ -44,22 +44,6 @@
 
 namespace txmpp {
 
-inline uint16 HostToNetwork16(uint16 n) {
-  return htons(n);
-}
-
-inline uint32 HostToNetwork32(uint32 n) {
-  return htonl(n);
-}
-
-inline uint16 NetworkToHost16(uint16 n) {
-  return ntohs(n);
-}
-
-inline uint32 NetworkToHost32(uint32 n) {
-  return ntohl(n);
-}
-
 // Reading and writing of little and big-endian numbers from memory
 // TODO: Add HostEndian #defines (HE)
 // TODO: Consider NetworkEndian as synonym for BigEndian, for clarity in use.
@@ -153,6 +137,38 @@ inline uint64 GetLE64(const void* memory) {
        | (static_cast<uint64>(Get8(memory, 2)) << 16)
        | (static_cast<uint64>(Get8(memory, 1)) <<  8)
        | (static_cast<uint64>(Get8(memory, 0)) <<  0);
+}
+
+// Check if the current host is big endian.
+inline bool IsHostBigEndian() {
+  static const int number = 1;
+  return (0 == *reinterpret_cast<const char*>(&number));
+}
+
+inline uint16 HostToNetwork16(uint16 n) {
+  return htons(n);
+}
+
+inline uint32 HostToNetwork32(uint32 n) {
+  return htonl(n);
+}
+
+inline uint64 HostToNetwork64(uint64 n) {
+  // If the host is little endian, GetBE64 converts n to big network endian.
+  return IsHostBigEndian() ? n : GetBE64(&n);
+}
+
+inline uint16 NetworkToHost16(uint16 n) {
+  return ntohs(n);
+}
+
+inline uint32 NetworkToHost32(uint32 n) {
+  return ntohl(n);
+}
+
+inline uint64 NetworkToHost64(uint64 n) {
+  // If the host is little endian, GetBE64 converts n to little endian.
+  return IsHostBigEndian() ? n : GetBE64(&n);
 }
 
 }  // namespace txmpp

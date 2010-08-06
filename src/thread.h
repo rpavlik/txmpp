@@ -214,6 +214,14 @@ public:
   virtual ~AutoThread();
 };
 
+// Win32 extension for threads that need to use COM
+#ifdef WIN32
+class ComThread : public Thread {
+ protected:
+  virtual void Run();
+};
+#endif
+
 // Provides an easy way to install/uninstall a socketserver on a thread.
 class SocketServerScope {
  public:

@@ -132,4 +132,11 @@ inline bool ImplicitCastToBool(bool result) { return result; }
 #define CTA_MAKE_NAME(line)             MAKE_NAME2(line)
 #define CTA_MAKE_NAME2(line)            constraint_ ## line
 
+#ifdef __GNUC__
+// Forces compiler to inline, even against its better judgement. Use wisely.
+#define FORCE_INLINE __attribute__((always_inline))
+#else
+#define FORCE_INLINE
+#endif
+
 #endif  // TXMPP_COMMON_H_

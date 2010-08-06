@@ -27,7 +27,10 @@
 
 #include "thread.h"
 
-#ifdef POSIX
+#if defined(WIN32)
+#include <comdef.h>
+#define MSDEV_SET_THREAD_NAME  0x406D1388
+#elif defined(POSIX)
 #include <time.h>
 #endif
 
@@ -35,15 +38,13 @@
 #include "logging.h"
 #include "time.h"
 
-#if defined(OSX_USE_COCOA)
+#ifdef OSX_USE_COCOA
 #ifndef OSX
 #error OSX_USE_COCOA is defined but not OSX
 #endif
 #include "maccocoathreadhelper.h"
 #include "scoped_autorelease_pool.h"
 #endif
-
-#define MSDEV_SET_THREAD_NAME  0x406D1388
 
 namespace txmpp {
 
@@ -492,5 +493,18 @@ AutoThread::~AutoThread() {
     ThreadManager::SetCurrent(NULL);
   }
 }
+
+#ifdef WIN32
+void ComThread::Run() {
+  HRESULT hr = CoInitializeEx(NULL, COINIT_MULTITHREADED);
+  ASSERT(SUCCEEDED(hr));
+  if (SUCCEEDED(hr)) {
+    Thread::Run();
+    CoUninitialize();
+  } else {
+    LOG(LS_ERROR) << "CoInitialize failed, hr=" << hr;
+  }
+}
+#endif
 
 }  // namespace txmpp

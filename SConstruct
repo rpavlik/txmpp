@@ -315,7 +315,7 @@ if system in ('darwin', 'linux'):
         Abort('No C++ compiler found.')
     for library in libraries:
         if not conf.CheckLib(library):
-            Abort('Unable to find library %s.' % name)
+            Abort('Unable to find required library %s.' % library)
 
 env = conf.Finish()
 
