@@ -1,0 +1,20 @@
+#ifndef _TXMPP_CONFIG_H_
+#define _TXMPP_CONFIG_H_
+
+// Platforms: the checks are "#ifdef"
+#cmakedefine OSX 1
+#cmakedefine LINUX 1
+#cmakedefine WIN32 1
+#cmakedefine ANDROID 1
+
+// Configuration: the checks are "#if"
+#cmakedefine POSIX 1
+
+#cmakedefine FEATURE_ENABLE_SSL 1
+#cmakedefine HAVE_OPENSSL_SSL_H 1
+#cmakedefine SSL_USE_OPENSSL 1
+#cmakedefine USE_SSLSTREAM 1
+
+#cmakedefine COMPILER_MSVC 1
+
+#endif
