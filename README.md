@@ -1,6 +1,15 @@
 txmpp
 =====
 
+### Project Status
+
+This was one patch Rylie made on top of a [third-party upstream project][motivating-factor] that appears to be unmaintained as well.
+I have moved on, no longer use this, and have no capacity to meaningfully maintain it.
+
+**Unmaintained**
+
+### Intro
+
 _txmpp_ is a C++ XMPP library created from the non-[XEP-0166][xep0166] portions
 of [libjingle][libjingle] with various bits removed and tweaked.
 
